@@ -1,0 +1,248 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+    background-color: #101010;
+}
+
+.text {
+    color: white;
+    font-size: 25px;
+    margin: 0px;
+}
+
+.subHeading {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+button{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.centered {
+      text-align: center;
+}
+
+.loginBtn {
+  transition-duration: 0.2s;
+  height:80px;
+  width:180px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #f0b000;
+  display: inline-block;
+  border: none;
+  transform: scale(1, 1);
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.registerBtn{
+  transition-duration: 0.2s;
+  height:80px;
+  width:300px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #f0b000;
+  display: inline-block;
+  border: none;
+  transform: scale(1, 1);
+  cursor: pointer;
+  margin-bottom: 5px;
+  font-size: 40px;
+}
+
+.loginBtn:focus, .registerBtn:focus {
+  outline-width: 0px;
+}
+
+.loginBtn:hover, .registerBtn:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.loginBtn:disabled, .registerBtn:disabled {
+  transition: scale 0.0s;
+  transform: scale(1, 1);
+  transition: background-color 0.5s ease;
+  background-color: #545454;
+  color: #545454;
+  cursor: not-allowed;
+  font-size: 30px;
+  color: white;
+}
+
+
+.registerBtn:disabled:hover{
+  transition: background-color 0.5s ease;
+  background-color: red;
+}
+
+.icon{
+  font-size: 20px;
+  cursor: help;
+  color: white;
+  margin: 5px;
+  margin-top: 0px;
+  float: right;
+
+}
+
+
+.login{
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(33, 33, 33);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.textbox{
+  padding: 12px 20px;
+  margin: 15px;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 25px;
+  border-radius: 5px;
+  border: none;
+  height: 35px;
+  font-family: fantasy;
+  padding-left: 10px;
+}
+
+input[type="password"] {
+  font-size: 35px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.header {
+  overflow: hidden;
+  background-color: rgb(13, 13, 13);
+  padding: 20px 10px;
+  margin: auto;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  text-align: center;
+}
+
+.header .logo{
+    float: left;
+    margin-left: 5px;
+    margin-top: 1px;
+    border-radius: 20px;
+}
+
+.header a {
+  float: none;
+  color: white;
+  background-color: rgba(31, 23, 0, 0.8);
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 30px;
+  letter-spacing: 2px;
+  line-height: 50px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.header {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: 'Anton', sans-serif;
+}
+
+.header a:hover {
+  transition-duration: 0.4s;
+  background-color: rgba(240, 176, 0, 0.48);
+  color: white;
+}
+
+.header a.active {
+  background-color: #f0b000;
+  color: white;
+}
+
+#Btn_Logout{
+  background-color: darkred;
+  float: right;
+  margin-right: 10px;
+}
+
+#Btn_Save{
+  background-color: darkgreen;
+  float: right;
+  margin-right: 20px;
+}
+#Btn_Logout:hover{
+  background-color: red;
+  float: right;
+  margin-right: 10px;
+}
+
+#Btn_Save:hover{
+  background-color: green;
+  float: right;
+  margin-right: 20px;
+}
+.content {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 160px;
+}
+
+/*NOTIFICATION STYLES*/
+.alert {
+  padding: 20px;
+  color: white;
+  opacity: 1;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 3px;
+}
+
+#closedAlert {
+  opacity: 0;
+  display: none;
+}
+
+.alert.success {background-color: rgba(76, 175, 80, 0.5); border-color: rgba(76, 175, 80, 1);}
+.alert.info {background-color: rgba(33, 150, 243, 0.5);border-color: rgba(33, 150, 243, 1);}
+.alert.warning {background-color: rgba(255, 152, 0, 0.5);border-color: rgba(255, 152, 0, 1);}
+.alert.error {background-color: rgba(255, 74, 8, 0.5); border-color: rgba(255, 74, 8, 1);}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+/*NOTIFICATION STYLES*/
