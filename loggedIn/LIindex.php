@@ -19,7 +19,7 @@ if (isset($_SESSION['username'])){
             <a class="active" href="LIindex.php">Start</a>
             <a href="LIVerdienen.php">Verdienen</a>
             <a href="LIStats.php">Statistiken</a>
-            <?php echo "<p>Geld: ".$_SESSION['']."</p>"; ?>
+            <?php echo "<label class='text'>Geld: ".$_SESSION['']."</label>"; ?>
             <a id="Btn_Save" href="LISave.php">Speichern</a>
             <a id="Btn_Logout" href="LILogout.php">Logout</a>
 
