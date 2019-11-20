@@ -1,7 +1,5 @@
 <?php  session_start();
 
-header("location: https://oeg2100.000webhostapp.com/");
-
 if(isset($_SESSION["username"])){
           header("location: loggedIn/LIindex.php");
 }
