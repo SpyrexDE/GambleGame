@@ -19,7 +19,7 @@ if (isset($_SESSION['username'])){
             <a class="active" href="LIindex.php">Start</a>
             <a href="LIVerdienen.php">Verdienen</a>
             <a href="LIStats.php">Statistiken</a>
-            <?php echo "<label class='text'>Geld: ".$_SESSION['']."</label>"; ?>
+            <?php echo "<label class='text'>Geld: ".$_SESSION['']."</label>"; ?> <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
             <a id="Btn_Save" href="LISave.php">Speichern</a>
             <a id="Btn_Logout" href="LILogout.php">Logout</a>
 
