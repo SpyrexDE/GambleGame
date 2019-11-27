@@ -22,7 +22,11 @@
                       or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
         $row = $result->fetch_array();
           if ($row['username'] == $username && $row['password'] == $password ){
+              
+              //Variablen setzen
               $_SESSION["username"] = $username;
+              $_SESSION["coins"] = $row['coins'];
+              
               header("location: loggedIn/LIindex.php");
           } else {
             $_SESSION['notification'] = ["error", "Falscher Benutzername oder Passwort."];
