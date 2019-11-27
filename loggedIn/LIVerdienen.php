@@ -26,7 +26,7 @@ if (isset($_SESSION['username'])){
 
       <div class="content">
 
-          <center><input onclick="Session['coins'] +=1; document.getElementById('labelCoins').innerHTML = 'Geld: ' + Session['coins'];" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\></center>
+          <center><input onclick="Session['coins'] +=1; document.getElementById('labelCoins').innerHTML = 'Geld: '.concat(Session['coins']);" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\></center>
           
           
       </div>
