@@ -26,7 +26,7 @@ if (isset($_SESSION['username'])){
 
       <div class="content">
 
-          <center><form><input class ="btnClicker" name="btnClicker" value="[Klicken]"\></form></center>
+          <center><button class ="btnClicker" name="btnClicker" value="[Klicken]"><Button></center>
           
           
       </div>
