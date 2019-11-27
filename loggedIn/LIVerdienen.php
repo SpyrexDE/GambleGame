@@ -18,7 +18,7 @@ if (isset($_SESSION['username'])){
             <a href="LIindex.php">Start</a>
             <a class="active" href="LIVerdienen.php">Verdienen</a>
             <a href="LIStats.php">Statistiken</a>
-            <?php echo "<label name='labelCoins' class='text'>Geld: ".$_SESSION['coins']."</label>"; ?>
+            <?php echo "<label id='labelCoins' class='text'>Geld: ".$_SESSION['coins']."</label>"; ?>
             <a id="Btn_Save" href="LISave.php">Speichern</a>
             <a id="Btn_Logout" href="LILogout.php">Logout</a>
 
@@ -26,7 +26,7 @@ if (isset($_SESSION['username'])){
 
       <div class="content">
 
-          <center><input onclick="document.getElementById('labelCoins').innerHTML = '1';" type="button" class ="btnClicker" name="btnClicker" value="[Klicken]"\></center>
+          <center><input onclick="document.getElementById('labelCoins').innerHTML = '1';" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\></center>
           
           
       </div>
