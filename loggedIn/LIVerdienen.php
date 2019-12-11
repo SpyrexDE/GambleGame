@@ -26,7 +26,6 @@ if (isset($_SESSION['username'])){
 
       <div class="content">
 
-          <center><input onclick="document.cookie +=1; document.getElementById('labelCoins').innerHTML = 'Geld: '.document.cookie;" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\></center>
           
           
       </div>
