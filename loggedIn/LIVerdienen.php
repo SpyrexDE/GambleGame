@@ -26,7 +26,7 @@ if (isset($_SESSION['username'])){
 
       <div class="content">
 
-          <center><input onclick="setCookie(’coins’, getCookie(’coins’)+ 1, -1); document.getElementById('labelCoins').innerHTML = 'Geld: '.getCookie(’coins’);" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\></center>
+          
           
           <script>
               function setCookie(cname, cvalue, exdays) {
@@ -53,6 +53,11 @@ if (isset($_SESSION['username'])){
           </script>
           
           
+          
+          
+          
+          
+          <center><input onclick="setCookie(’coins’, getCookie(’coins’)+ 1, -1); document.getElementById('labelCoins').innerHTML = 'Geld: '.getCookie(’coins’);" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\></center>
           
       </div>
     </body>
