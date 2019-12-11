@@ -25,7 +25,7 @@
               
               //Variablen setzen
               $_SESSION["username"] = $username;
-              $_SESSION["coins"] = $row['coins'];
+              $_COOKIE["coins"] = $row['coins'];
               
               header("location: loggedIn/LIindex.php");
           } else {
