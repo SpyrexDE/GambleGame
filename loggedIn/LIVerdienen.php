@@ -18,7 +18,7 @@ if (isset($_SESSION['username'])){
             <a href="LIindex.php">Start</a>
             <a class="active" href="LIVerdienen.php">Verdienen</a>
             <a href="LIStats.php">Statistiken</a>
-            <?php echo "<label id='labelCoins' class='text'>Geld: ".$_SESSION['coins']."</label>"; ?>
+            <?php echo "<label id='labelCoins' class='text'>Geld: ".$_COOKIE['coins']."</label>"; ?>
             <a id="Btn_Save" href="LISave.php">Speichern</a>
             <a id="Btn_Logout" href="LILogout.php">Logout</a>
 
