@@ -57,7 +57,7 @@ if (isset($_SESSION['username'])){
           
           
           
-          <center><input onclick="setCookie(’coins’, parseInt(getCookie(’coins’))+ 1, -1); document.getElementById('labelCoins').innerHTML = 'Geld: '.getCookie(’coins’);" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\></center>
+          <center><input onclick="setCookie(’coins’, parseInt(getCookie(’coins’))+ 1, 365); document.getElementById('labelCoins').innerHTML = 'Geld: '.getCookie(’coins’);" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\></center>
           
       </div>
     </body>
