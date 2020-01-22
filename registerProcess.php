@@ -10,7 +10,7 @@ if(!isset($_SESSION))
 
           //Mit Server verbinden und Datenbank auswaehlen
           $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
-          mysqli_select_db($database, "gamblegame");
+          mysqli_select_db($database, "GambleDB");
 
           //Lade Werte des form-elemtes in die Variablen
           $username = $_POST['user'];
