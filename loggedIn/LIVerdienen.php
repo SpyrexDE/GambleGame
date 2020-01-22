@@ -58,7 +58,7 @@ if (isset($_SESSION['username'])){
               
               function refresh(){
                   var coins = getCookie('coins');
-                  var coinStr = 'Geld: '.coins;
+                  var coinStr = coins;
                   document.getElementById('labelCoins').innerHTML = coinStr;
                   console.log(getCookie('coins'));
               }
