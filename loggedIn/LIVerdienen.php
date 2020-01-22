@@ -60,7 +60,7 @@ if (isset($_SESSION['username'])){
                   var coins = getCookie('coins');
                   var coinStr = 'Geld: '.coins;
                   document.getElementById('labelCoins').innerHTML = coinStr;
-                  print(getCookie('coins'));
+                  echo(getCookie('coins'));
               }
               
               
