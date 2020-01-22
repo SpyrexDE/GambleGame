@@ -8,7 +8,7 @@
 
         //Mit Server verbinden und Datenbank auswaehlen
           $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
-          mysqli_select_db($database, "gamblegame");
+          mysqli_select_db($database, "GambleDB");
 
         //Anti Mysql injection
         $username = stripcslashes($username);
