@@ -9,7 +9,7 @@ if(!isset($_SESSION))
 
 
           //Mit Server verbinden und Datenbank auswaehlen
-          $database = mysqli_connect("db4free.net", "oeg2100", "L7cnyeN9DA@Ywx3");
+          $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
           mysqli_select_db($database, "gamblegame");
 
           //Lade Werte des form-elemtes in die Variablen
