@@ -51,16 +51,26 @@ if (isset($_SESSION['username'])){
                   return "";
                 }
               
-              var coins = getCookie('coins');
-              var coinStr = 'Geld: '.coins;
+              function addCoins(value){
+                setCookie('coins', parseInt(getCookie('coins'))+ value, 365);
+                refresh();
+              }
+              
+              function refresh(){
+                  var coins = getCookie('coins');
+                  var coinStr = 'Geld: '.coins;
+                  document.getElementById('labelCoins').innerHTML = coinStr;
+              }
+              
+              
+              window.onload = function () {
+                  refresh();
+              }
           </script>
           
           
           
-          
-          
-          
-          <center><input onclick="setCookie('coins', parseInt(getCookie('coins'))+ 1, 365); document.getElementById('labelCoins').innerHTML = coinStr;" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\></center>
+          <center><input onclick="addCoins(1);" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\></center>
           
       </div>
     </body>
