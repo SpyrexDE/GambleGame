@@ -39,7 +39,7 @@ if (isset($_SESSION['username'])){
             
             <?php
               while ($row = mysql_fetch_array($topTen)) {
-                echo '<p> $row['coins'] </p>';
+                echo "<p> $row['coins'] </p>";
               }                    
             ?>
 
