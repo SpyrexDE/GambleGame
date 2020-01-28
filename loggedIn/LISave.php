@@ -9,6 +9,6 @@ $database -> query("UPDATE users SET coins='$coins' WHERE username='$username'")
 
 $_SESSION['notification'] = ["success", "Erfolgreich gespeichert!"];
 
-header("location: LIindex.php");
+header("location: loggedIn/LIindex.php");
 
 ?>
