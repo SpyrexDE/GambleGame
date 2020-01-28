@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php session_start();
 if(isset($_SESSION["username"])){
           header("location: loggedIn/LIindex.php");
