@@ -36,7 +36,7 @@ if (isset($_SESSION['username'])){
       <div class="content">
 
         <div>
-            <centered>
+            <center>
             
             <?php
               $counter = 0;
@@ -46,7 +46,7 @@ if (isset($_SESSION['username'])){
               }
             ?>
 
-            </centered>
+            </center>
         </div>
       </div>
     </body>
