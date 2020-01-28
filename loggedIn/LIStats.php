@@ -39,7 +39,7 @@ if (isset($_SESSION['username'])){
             
             <?php
 
-                echo "<label class='text'>TopTen: ".implode(",", $topTen['coins'])."</label>";
+                echo "<label class='text'>TopTen: ".implode(",", $topTen)."</label>";
                   
             ?>
 
