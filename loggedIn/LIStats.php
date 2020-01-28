@@ -5,8 +5,8 @@ session_start();
 $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
 mysqli_select_db($database, "GambleDB");
 
-$result = $database -> query("SELECT * FROM users") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
-$topTen = $result[0]->fetch_array();
+$result = $database -> query("SELECT MAX(coins) FROM users") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
+$topTen = $result->fetch_array();
 
 
 if (isset($_SESSION['username'])){
@@ -39,7 +39,7 @@ if (isset($_SESSION['username'])){
             
             <?php
 
-                echo "<label class='text'>TopTen: ".implode(",", $topTen)."</label>";
+                echo "<label class='text'>TopTen: ".implode(",", $topTen['coins'])."</label>";
                   
             ?>
 
