@@ -38,8 +38,10 @@ if (isset($_SESSION['username'])){
         <div>
             
             <?php
+              $counter = 0;
               while($topTen = $result->fetch_array()){
-                echo "<label class='text'>TopTen: ".$topTen['coins']."</label>";
+                $counter += 1;
+                echo "<p class='text'>".$counter.". Platz: ".$topTen['username']." | ".$topTen['coins']." Coins</p>";
               }
             ?>
 
