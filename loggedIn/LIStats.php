@@ -39,7 +39,7 @@ if (isset($_SESSION['username'])){
             
             <?php
 
-                echo $result;
+                echo "<label class='text'>Geld: ".$_COOKIE['coins']."</label>";
                   
             ?>
 
