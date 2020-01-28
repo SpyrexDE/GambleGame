@@ -39,7 +39,7 @@ if (isset($_SESSION['username'])){
             
             <?php
 
-                echo "<p> implode(",", $result); </p>";
+                echo implode(",", $result); </p>;
                   
             ?>
 
