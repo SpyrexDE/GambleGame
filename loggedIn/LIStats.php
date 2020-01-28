@@ -38,7 +38,7 @@ if (isset($_SESSION['username'])){
         <div>
             
             <?php
-              while ($row = mysql_fetch_array($topTen)) {
+              while ($row = mysql_fetch_assoc($topTen)) {
                 echo "<p> $row.[0] </p>";
               }                    
             ?>
