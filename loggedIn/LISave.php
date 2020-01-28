@@ -3,7 +3,7 @@ session_start();
 $coins = $_COOKIE["coins"];
 $username = $_SESSION["username"];
 
-$coins = int($coins);
+$coins = intval($coins);
 
 //Mit Server verbinden und Datenbank auswaehlen
 $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
