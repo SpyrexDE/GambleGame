@@ -39,7 +39,7 @@ if (isset($_SESSION['username'])){
             
             <?php
               while ($row = mysql_fetch_assoc($topTen)) {
-                echo "<p> $row['username'] </p>";
+                echo "<p> implode(",", $row); </p>";
               }                    
             ?>
 
