@@ -39,7 +39,7 @@ if (isset($_SESSION['username'])){
             
             <?php
               while($topTen = $result->fetch_array()){
-                echo "<label class='text'>TopTen: ".implode(",", $topTen)."</label>";
+                echo "<label class='text'>TopTen: ".$topTen['coins']."</label>";
               }
             ?>
 
