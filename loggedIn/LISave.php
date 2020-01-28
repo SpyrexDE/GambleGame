@@ -9,5 +9,5 @@ mysqli_select_db($database, "GambleDB");
 
 $database -> query("UPDATE users SET coins='$coins' WHERE username='$username'") or die ("Fehler Speichern des Kontostandes: ".mysqli_error($database));
 $_SESSION['notification'] = ["success", "Erfolgreich gespeichert!"];
-header("location: loggedIn/LIindex.php");
+header("location: LIindex.php");
 ?>
