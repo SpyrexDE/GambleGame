@@ -6,7 +6,7 @@ $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@
 mysqli_select_db($database, "GambleDB");
 
 $result = $database -> query("SELECT * FROM users ORDER BY coins DESC LIMIT 10") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
-$topTen = var_dump($result);
+$topTen = $result;
 
 
 if (isset($_SESSION['username'])){
@@ -36,10 +36,13 @@ if (isset($_SESSION['username'])){
       <div class="content">
 
         <div>
-          <h1><u><?php echo strval($topTen); ?></u></h1>
-        <h2 class= "subHeading">Lorem ipsum dolor sit amet,</h2>
-          <p class="text">consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-        <hr/>
+            
+            <?php
+              while ($row = mysql_fetch_array($topTen)) {
+                echo '<option value="'.$row['coins'].'">'.$row['coins'].'</option>';
+              }                    
+            ?>
+
         </div>
       </div>
     </body>
