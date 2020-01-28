@@ -27,6 +27,26 @@ if (isset($_SESSION['username'])){
 
       <div class="content">
 
+          
+                     <!--NOTIFICATION-LISTENER-->
+
+                   <?php
+                   if (isset($_SESSION['notification'])){
+                     $type = $_SESSION['notification'][0];
+                     $message = $_SESSION['notification'][1];
+                     ?>
+                     <div class="alert <?php echo $type; ?>" >
+                       <span class="closebtn" onclick="this.parentElement.id='closedAlert';">&times;</span>
+                       <?php echo $message; ?>
+                     </div>
+                     <?php
+                     unset($_SESSION['notification']);
+                     }
+
+                    ?>
+          
+          
+          
         <div>
           <h1><u>Under construction</u></h1>
         <h2 class= "subHeading">Lorem ipsum dolor sit amet,</h2>
