@@ -38,9 +38,9 @@ if (isset($_SESSION['username'])){
         <div>
             
             <?php
-              while ($row = mysql_fetch_assoc($topTen)) {
-                echo "<p> implode(",", $row); </p>";
-              }                    
+
+                echo "<p> implode(",", $result); </p>";
+                  
             ?>
 
         </div>
