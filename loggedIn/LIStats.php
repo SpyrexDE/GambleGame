@@ -8,7 +8,7 @@ mysqli_select_db($database, "GambleDB");
 $result = $database -> query("select * from users order by coins desc limit 10") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
 $topTen = $result->fetch_array();
 
-$best = $topTen[0];
+$best = $topTen[0]->fetch_array();
 
 if (isset($_SESSION['username'])){
 ?>
