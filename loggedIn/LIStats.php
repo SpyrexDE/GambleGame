@@ -39,7 +39,7 @@ if (isset($_SESSION['username'])){
             
             <?php
               while ($row = mysql_fetch_array($topTen)) {
-                echo '<option value="'.$row['coins'].'">'.$row['coins'].'</option>';
+                echo '<p> $row['coins'] </p>';
               }                    
             ?>
 
