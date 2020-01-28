@@ -6,7 +6,7 @@ $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@
 mysqli_select_db($database, "GambleDB");
 
 $result = $database -> query("SELECT * FROM users ORDER BY coins ASC LIMIT 10") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
-$topTen = $result->fetch_array();
+
 
 
 if (isset($_SESSION['username'])){
