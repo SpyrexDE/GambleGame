@@ -3,8 +3,8 @@ session_start();
 $coins = $_COOKIE["coins"];
 $username = $_SESSION["username"];
 
-$coins = stripcslashes($coins);
-$coins = mysqli_real_escape_string($database, $coins);
+//$coins = stripcslashes($coins);
+//$coins = mysqli_real_escape_string($database, $coins);
 
 //Mit Server verbinden und Datenbank auswaehlen
 $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
