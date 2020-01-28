@@ -5,8 +5,10 @@ session_start();
 $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
 mysqli_select_db($database, "GambleDB");
 
-$result = $database -> query("select * from users order by coins asc limit 10") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
+$result = $database -> query("select * from users order by coins desc limit 10") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
 $topTen = $result->fetch_array();
+
+$best = $topTen[0];
 
 if (isset($_SESSION['username'])){
 ?>
@@ -35,7 +37,7 @@ if (isset($_SESSION['username'])){
       <div class="content">
 
         <div>
-          <h1><u><?php echo $topTen[5]['coins']; ?></u></h1>
+          <h1><u><?php echo $best['coins']; ?></u></h1>
         <h2 class= "subHeading">Lorem ipsum dolor sit amet,</h2>
           <p class="text">consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
         <hr/>
