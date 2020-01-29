@@ -24,9 +24,9 @@ $_SESSION['notification'] = ["success", "Erfolgreich gespeichert!"];
   $_SESSION['notification'] = ["error", "Cheaten ist böse!"];
 }
 //Clicks resetten
-setcookie('clicks', '', time() - 3600);
+setcookie('clicks', null, -1, '/'); 
 //Coins zuruecksetzten
-setcookie('coins', '$row['coins']', time() - 3600);
+setcookie("coins", $row["coins"]); 
 
 header("location: LIindex.php");
 
