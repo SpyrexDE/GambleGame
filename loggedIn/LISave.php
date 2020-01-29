@@ -23,7 +23,8 @@ $_SESSION['notification'] = ["success", "Erfolgreich gespeichert!"];
 } else{
   $_SESSION['notification'] = ["warning", "Cheaten ist böse!"];
 }
-
+//Clicks resetten
+$_COOKIE["clicks"] = 0;
 
 header("location: LIindex.php");
 
