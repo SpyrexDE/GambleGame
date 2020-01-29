@@ -15,11 +15,11 @@ if (isset($_SESSION['username'])){
 
             <img class= "logo" src="../img/logo.jpg" height="100" width="100">
 
-            <a href="LIindex.php">Start</a>
-            <a class="active" href="LIVerdienen.php">Verdienen</a>
-            <a href="LIStats.php">Statistiken</a>
+            <a onclick="setClicks(clicks)" href="LIindex.php">Start</a>
+            <a onclick="setClicks(clicks)" class="active" href="LIVerdienen.php">Verdienen</a>
+            <a onclick="setClicks(clicks)" href="LIStats.php">Statistiken</a>
             <?php echo "<label id='labelCoins' class='text'>Geld: ".$_COOKIE['coins']."</label>"; ?>
-            <a id="Btn_Save" href="LISave.php">Speichern</a>
+            <a onclick="setClicks(clicks)" id="Btn_Save" href="LISave.php">Speichern</a>
             <a id="Btn_Logout" href="LILogout.php">Logout</a>
 
         </div>
@@ -29,6 +29,8 @@ if (isset($_SESSION['username'])){
           
           
           <script>
+              var clicks = 0;
+              
               function setCookie(cname, cvalue, exdays) {
                   var d = new Date();
                   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -56,6 +58,11 @@ if (isset($_SESSION['username'])){
                 refresh();
               }
               
+              function setClicks(value){
+                setCookie('clicks', value, 365);
+                refresh();
+              }
+              
               function refresh(){
                   var coins = getCookie('coins');
                   var currency = "Geld: ";
@@ -71,7 +78,7 @@ if (isset($_SESSION['username'])){
           
           
           
-          <center><input onclick="addCoins(1);" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\></center>
+          <center><input onclick="addCoins(1); clicks+=1;" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\></center>
           
       </div>
     </body>
