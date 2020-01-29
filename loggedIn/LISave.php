@@ -25,6 +25,8 @@ $_SESSION['notification'] = ["success", "Erfolgreich gespeichert!"];
 }
 //Clicks resetten
 $_COOKIE["clicks"] = 0;
+//Coins zuruecksetzten
+$_COOKIE["coins"] = $row['coins'];
 
 header("location: LIindex.php");
 
