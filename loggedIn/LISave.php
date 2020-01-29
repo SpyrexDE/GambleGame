@@ -14,7 +14,7 @@ $result = $database -> query("select * from users where username = '$username'")
 $row = $result->fetch_array();
 
 
-if ($row['coins'] - $coins <= $clicks ){
+if ($row['coins'] - $coins != $clicks ){
 
 
 $database -> query("UPDATE users SET coins='$coins' WHERE username='$username'") or die ("Fehler Speichern des Kontostandes: ".mysqli_error($database));
