@@ -4,18 +4,17 @@ if(!isset($_SESSION))
     session_start();
 }
 
+          //Lade Werte des form-elemtes in die Variablen und entferne Tags
+          $username = strip_tags($_POST['user']);
+          $password = strip_tags($_POST['pass']);
+          $seineIP = $_SERVER['REMOTE_ADDR'];
 
-    if(!empty( $_POST['user']) &&  !empty($_POST['pass']) && darfRegistrieren()){
+    if(strlen( $username) >= 4 && strlen( $username) <= 10 && strlen( $password) >= 4 && strlen( $password) <= 10 && darfRegistrieren()){
 
 
           //Mit Server verbinden und Datenbank auswaehlen
           $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
           mysqli_select_db($database, "GambleDB");
-
-          //Lade Werte des form-elemtes in die Variablen
-          $username = $_POST['user'];
-          $password = $_POST['pass'];
-          $seineIP = $_SERVER['REMOTE_ADDR'];
 
           $registeredIP= $database -> query("SELECT IP FROM iplist WHERE IP = '$seineIP'") or die ("Fehler beim erstellen des Accounts: ".mysqli_error($database));
           $registeredIP = $registeredIP->fetch_array(MYSQLI_NUM)[0];
@@ -53,6 +52,9 @@ if(!isset($_SESSION))
 
 
 
+    } else {
+              $_SESSION['notification'] = ["error", "Ungültige Eingaben."];
+              header("location: Register.php");
     }
 
 
