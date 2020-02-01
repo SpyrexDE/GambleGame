@@ -213,6 +213,11 @@ input:focus {
 #Btn_Logout:hover{
   background-color: red;
 }
+
+#btnCoinFlip{
+  max-width: 100px;
+}
+
 .content {
   max-width: 800px;
   margin: auto;
