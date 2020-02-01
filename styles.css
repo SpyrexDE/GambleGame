@@ -1,3 +1,9 @@
+html.is-animating .transition-fade {
+  opacity: 1;
+}
+
+
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;

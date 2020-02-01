@@ -9,6 +9,7 @@ if(isset($_SESSION["username"])){
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
 <link rel="shortcut icon" type="image/x-icon" href="img/logo.jpg" />
+<script src="./dist/SwupJsPlugin.js"></script>
 <title>__________OEG-2100_____________</title>
 </head>
     <body>
