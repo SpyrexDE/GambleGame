@@ -19,7 +19,6 @@ if (isset($_SESSION['username'])){
             <a onclick="setClicks(clicks)" class="active" href="LIVerdienen.php">Verdienen</a>
             <a onclick="setClicks(clicks)" href="LIStats.php">Statistiken</a>
             <?php echo "<label id='labelCoins' class='text'>Geld: ".$_COOKIE['coins']."</label>"; ?>
-            <a onclick="setClicks(clicks)" id="Btn_Save" href="LISave.php">Speichern</a>
             <a id="Btn_Logout" href="LILogout.php">Logout</a>
 
         </div>
