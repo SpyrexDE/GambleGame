@@ -14,7 +14,7 @@ if (isset($_SESSION['username'])){
 
         <div class="header">
 
-            <img class= "logo" src=<?php $_SESSION["image"]?> height="100" width="100">
+            <img class= "logo" src=<?php echo $_SESSION["image"];?> height="100" width="100">
 
             <a class="active" href="LIindex.php">Start</a>
             <a href="LIVerdienen.php">Verdienen</a>
