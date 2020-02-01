@@ -25,10 +25,25 @@ if (isset($_SESSION['username'])){
 
       <div class="content">
 
-          
-          
+        <!--NOTIFICATION-LISTENER-->
+
+      <?php
+      if (isset($_SESSION['notification'])){
+        $type = $_SESSION['notification'][0];
+        $message = $_SESSION['notification'][1];
+        ?>
+        <div class="alert <?php echo $type; ?>" >
+          <span class="closebtn" onclick="this.parentElement.id='closedAlert';">&times;</span>
+          <?php echo $message; ?>
+        </div>
+        <?php
+        unset($_SESSION['notification']);
+        }
+
+       ?>
+
           <script>
-              
+
               function setCookie(cname, cvalue, exdays) {
                   var d = new Date();
                   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -50,37 +65,37 @@ if (isset($_SESSION['username'])){
                   }
                   return "";
                 }
-              
+
               function addCoins(value){
                 setCookie('coins', parseInt(getCookie('coins'))+ value, 365);
                 refresh();
               }
-              
+
               function setClicks(value){
                 setCookie('clicks', value, 365);
                 refresh();
               }
-              
+
               function refresh(){
                   var coins = getCookie('coins');
                   var currency = "Geld: ";
                   var coinStr = coins;
                   document.getElementById('labelCoins').innerHTML = currency.concat(coinStr);
               }
-              
-              
+
+
               window.onload = function () {
                   refresh();
               }
           </script>
-          
-          
-          
+
+
+
           <center><input onclick="addCoins(1); sendClick();" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\></center>
-          
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 </script>
-          
+
           <script>
           function sendClick(){
             $.ajax({
@@ -89,10 +104,35 @@ if (isset($_SESSION['username'])){
                 data:
                 {
                     click: true
-                }              
+                }
             });
           }
           </script>
+
+
+          <hr>
+
+          <h2 class = "text">Coinflip</h2>
+          <p>Wenn du gewinnst, wird sich dein Einsatz vedoppeln. Wenn nicht, dann ist dein Einsatz weg.</p>
+
+          <center><input type="text" class="textbox" value="Einsatz" id="coinFlipBox"></input></center>
+
+          <center><input onclick="sendCoinflip();" type="button" class ="btnCoinFlip" id="btnCoinFlip" value="[Flip]"\></center>
+
+          <script>
+          function sendCoinflip(){
+            $.ajax({
+                url: 'coinFlip.php',
+                type:'POST',
+                data:
+                {
+                    einsatz: document.getElementById("coinFlipBox").value
+                }
+            });
+          }
+          </script>
+
+
       </div>
     </body>
 </html>
