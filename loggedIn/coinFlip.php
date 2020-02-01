@@ -29,4 +29,6 @@ if(!empty($einsatz)){
 } else {
     $_SESSION['notification'] = ["error", "Bitte trage deinen Einsatz ein."];
 }
+
+$_COOKIE["coins"] = $row['coins'];
 header("location: LIVerdienen.php");
