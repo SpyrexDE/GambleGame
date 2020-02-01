@@ -214,8 +214,8 @@ input:focus {
   background-color: red;
 }
 
-#btnCoinFlip{
-  max-width: 100px;
+#textboxCoinFlip{
+  max-width: 150px;
 }
 
 .content {
