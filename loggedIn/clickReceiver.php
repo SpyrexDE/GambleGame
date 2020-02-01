@@ -1,7 +1,4 @@
 <?php
-
-die("clicked");
-
 session_start();
 
 $username = $_SESSION["username"];
