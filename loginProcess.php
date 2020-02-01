@@ -29,7 +29,7 @@
               if(file_exists("img/userIMGS/" + $username + ".jpg")){
                 $_SESSION["image"] = "img/userIMGS/" + $username + ".jpg";
               } else {
-                die("img/userIMGS/" + $username + ".jpg");
+                die(echo "img/userIMGS/" + $username + ".jpg";);
                 $_SESSION["image"] = "../img/logo.jpg";
               }
 
