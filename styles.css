@@ -184,6 +184,7 @@ input:focus {
   font-size: 50px;
   font-weight: bold;
   font-family: 'Anton', sans-serif;
+  max-height: 100px;
 }
 
 .header a:hover {
