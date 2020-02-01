@@ -117,7 +117,7 @@ if (isset($_SESSION['username'])){
           <form action="coinFlip.php" method="POST">
               <center><input type="text" class="textbox" value="10" name="einsatz"></input></center>
 
-              <center><button type="submit" class ="btnClicker" id="btnCoinFlip">Flip</Button></center>
+              <center><input type="submit" class ="btnClicker" id="btnCoinFlip">Flip</Button></center>
           </form>
 
 
