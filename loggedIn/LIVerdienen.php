@@ -78,9 +78,11 @@ if (isset($_SESSION['username'])){
           
           <center><input onclick="addCoins(1); sendClick();" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\></center>
           
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+          
           <script>
           function sendClick(){
-            print("hilfe");
             $.ajax({
                 url: 'clickReceiver.php',
                 type:'POST',
