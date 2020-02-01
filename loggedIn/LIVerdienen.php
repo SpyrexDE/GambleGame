@@ -117,6 +117,7 @@ if (isset($_SESSION['username'])){
           <div class="section">
               <h1>Coinflip</h1>
               <p class = "text">Wenn du gewinnst, wird sich dein Einsatz vedoppeln. Wenn nicht, dann ist dein Einsatz weg.</p>
+              <p class = "text">Einsatz: <p>
               <form action="coinFlip.php" method="POST">
                   <input type="text" class="textbox" value="10" name="einsatz" id="textboxCoinFlip"></input>
 
