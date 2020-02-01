@@ -203,21 +203,8 @@ input:focus {
   margin-right: 25px;
 }
 
-#Btn_Save{
-  background-color: darkgreen;
-  float: right;
-  margin-right: 20px;
-}
 #Btn_Logout:hover{
   background-color: red;
-  float: right;
-  margin-right: 10px;
-}
-
-#Btn_Save:hover{
-  background-color: green;
-  float: right;
-  margin-right: 20px;
 }
 .content {
   max-width: 800px;
