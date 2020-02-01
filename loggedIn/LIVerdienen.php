@@ -78,7 +78,7 @@ if (isset($_SESSION['username'])){
           
           
           
-          <center><input onclick="addCoins(1); clicks+=1; sendClick();" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\></center>
+          <center><input onclick="addCoins(1); sendClick();" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\></center>
           
           <script>
           function sendClick(){
