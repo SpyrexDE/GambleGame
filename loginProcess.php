@@ -26,8 +26,8 @@
               //Variablen setzen
               $_SESSION["username"] = $username;
 
-              if(file_exists("img/userIMGS/".$username.".jpg")){
-                $_SESSION["image"] = "img/userIMGS/".$username.".jpg";
+              if(file_exists("../img/userIMGS/".$username.".jpg")){
+                $_SESSION["image"] = "../img/userIMGS/".$username.".jpg";
               } else {
                 $_SESSION["image"] = "../img/logo.jpg";
               }
