@@ -200,7 +200,7 @@ input:focus {
 #Btn_Logout{
   background-color: darkred;
   float: right;
-  margin-right: 10px;
+  margin-right: 25px;
 }
 
 #Btn_Save{
