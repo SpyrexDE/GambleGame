@@ -26,13 +26,9 @@ if(isset($_SESSION["username"])){
       <div class="content">
 
         <div>
-          <h1><u>Under construction</u></h1>
-        <h2 class= "subHeading">Lorem ipsum dolor sit amet,</h2>
-          <p class="text">consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-        <hr/>
-          <h2 class= "subHeading">Willkommen auf meiner Website!</h2>
-            <p class="text">Hier wird ein lustiges Klickerspiel mit Gewinnspiel-elementen entstehen. Mit etwas Glück habe ich das Account-Manageing bereits programmiert, und du kannst dich schon einmal registrieren!</p>
-            <a href="/loggedIn/LIindex.php">Zum Spiel</a>
+          <h1><u>Willkommen bei GambleGame</u></h1>
+        <h2 class= "subHeading">-Zocken ohne Grenzen-</h2>
+                  <p class="text">Hertzlich willkommen auf der Website des OEG-Accounts <b>2100</b>. Hier kannst du dir dein Kapital erklicken, um es anschließend in einem unterhanltsamen SevenEleven-Spiel zu verzocken. Wirst du die Millarden erreichen können oder als größter Pechvogel in die Geschichte eingehen? Registriere dich jetzt und werde zu einen der größten Spieler des GambleGames und ringe um der 1. Platz auf der Toplist!</p>
         </div>
       </div>
     </body>
