@@ -14,7 +14,7 @@ $row = $result->fetch_array();
 if($click == true){
 
 $clicks = $row['clicks'] + 1;
-$database -> query("UPDATE users SET coins='$clicks' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
+$database -> query("UPDATE users SET clicks='$clicks' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
 
 }
 ?>
