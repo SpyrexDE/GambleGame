@@ -80,6 +80,7 @@ if (isset($_SESSION['username'])){
           
           <script>
           function sendClick(){
+            window.reload();
             $.ajax({
                 url: 'clickReceiver.php',
                 type:'POST',
