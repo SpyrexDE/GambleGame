@@ -30,11 +30,11 @@ button{
     font-size: 50px;
 }
 
-hr::before{
+hr:hover{
   opacity: 0;
 }
 
-hr::after{
+hr:default{
   opacity: 1;
 }
 
