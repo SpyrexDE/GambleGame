@@ -30,6 +30,10 @@ button{
     font-size: 50px;
 }
 
+hr{
+  border: 6px solid white;
+  border-radius: 3px;
+}
 .centered {
       text-align: center;
 }
