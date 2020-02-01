@@ -113,11 +113,11 @@ if (isset($_SESSION['username'])){
           <hr>
 
           <h2 class = "text">Coinflip</h2>
-          <p>Wenn du gewinnst, wird sich dein Einsatz vedoppeln. Wenn nicht, dann ist dein Einsatz weg.</p>
+          <p class = "text">Wenn du gewinnst, wird sich dein Einsatz vedoppeln. Wenn nicht, dann ist dein Einsatz weg.</p>
 
           <center><input type="text" class="textbox" value="Einsatz" id="coinFlipBox"></input></center>
 
-          <center><input onclick="sendCoinflip();" type="button" class ="btnCoinFlip" id="btnCoinFlip" value="[Flip]"\></center>
+          <center><input onclick="sendCoinflip();" type="button" class ="btnClicker" id="btnCoinFlip" value="[Flip]"\></center>
 
           <script>
           function sendCoinflip(){
