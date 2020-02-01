@@ -32,6 +32,6 @@ if(!empty($einsatz)){
 
 $result = $database -> query("select * from users where username = '$username'") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
 $row = $result->fetch_array();
-setcookie("coins", $row["coins"]);
+setcookie("coins", $row["coins"], $path = "/");
 
 header("location: LIVerdienen.php");
