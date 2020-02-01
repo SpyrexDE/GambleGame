@@ -26,7 +26,7 @@ if (isset($_SESSION['username'])){
 
       <div class="content">
 
-          
+
                      <!--NOTIFICATION-LISTENER-->
 
                    <?php
@@ -43,9 +43,9 @@ if (isset($_SESSION['username'])){
                      }
 
                     ?>
-          
-          
-          
+
+
+
         <div>
           <h1>GambleGame</h1>
         <h2 class= "subHeading">Willkommen im Spiel <b><?php echo $_SESSION['username'];?></b>!</h2>
@@ -59,6 +59,7 @@ if (isset($_SESSION['username'])){
                 <li>Performance verbesserungen</li>
                 <li>Neue Datenbankverbindung</li>
                 <li>Kleinere bugfixes</li>
+                <li>Coinflip hinzugefügt</li>
             </ul>
         </div>
       </div>
