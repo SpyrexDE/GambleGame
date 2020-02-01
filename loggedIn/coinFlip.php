@@ -20,7 +20,7 @@ if(!empty($einsatz)){
         $_SESSION['notification'] = ["success", "Du hast beim Coinflip gewonnen!"];
       }else {
         $verloren = $row['coins'] - $einsatz;
-        $database -> query("UPDATE users SET coins='$gewinn' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
+        $database -> query("UPDATE users SET coins='$verloren' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
         $_SESSION['notification'] = ["error", "Du hast beim Coinflip verloren!"];
       }
   } else {
