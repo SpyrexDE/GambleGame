@@ -27,6 +27,7 @@
               $_SESSION["username"] = $username;
               setcookie("coins", $row["coins"]);
               
+            $_SESSION['notification'] = ["success", "Erfolgreich eingeloggt."];
               header("location: loggedIn/LIindex.php");
           } else {
             $_SESSION['notification'] = ["error", "Falscher Benutzername oder Passwort."];
