@@ -29,7 +29,6 @@ if (isset($_SESSION['username'])){
           
           
           <script>
-              var clicks = 0;
               
               function setCookie(cname, cvalue, exdays) {
                   var d = new Date();
