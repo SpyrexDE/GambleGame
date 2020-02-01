@@ -22,11 +22,18 @@
                       or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
         $row = $result->fetch_array();
           if ($row['username'] == $username && $row['password'] == $password ){
-              
+
               //Variablen setzen
               $_SESSION["username"] = $username;
+
+              if(file_exists("img/userIMGS/" + $username + ".jpg"))
+                $_SESSION["image"] = "img/userIMGS/" + $username + ".jpg";
+              } else {
+                $_SESSION["image"] = "../img/logo.jpg";
+              }
+
               setcookie("coins", $row["coins"]);
-              
+
             $_SESSION['notification'] = ["success", "Erfolgreich eingeloggt."];
               header("location: loggedIn/LIindex.php");
           } else {

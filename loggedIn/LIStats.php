@@ -22,7 +22,7 @@ if (isset($_SESSION['username'])){
 
         <div class="header">
 
-            <img class= "logo" src="../img/logo.jpg" height="100" width="100">
+            <img class= "logo" src=<?php $_SESSION["image"]?> height="100" width="100">
 
             <a href="LIindex.php">Start</a>
             <a href="LIVerdienen.php">Verdienen</a>
@@ -36,7 +36,7 @@ if (isset($_SESSION['username'])){
 
         <div>
             <center>
-            
+
             <?php
               $counter = 0;
               while($topTen = $result->fetch_array()){
