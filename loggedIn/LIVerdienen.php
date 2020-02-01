@@ -114,23 +114,11 @@ if (isset($_SESSION['username'])){
 
           <h2 class = "text">Coinflip</h2>
           <p class = "text">Wenn du gewinnst, wird sich dein Einsatz vedoppeln. Wenn nicht, dann ist dein Einsatz weg.</p>
+          <form action="/coinFlip.php" method="POST">
+              <center><input type="text" class="textbox" value="Einsatz" name="einsatz"></input></center>
 
-          <center><input type="text" class="textbox" value="Einsatz" id="coinFlipBox"></input></center>
-
-          <center><input onclick="sendCoinflip();" type="button" class ="btnClicker" id="btnCoinFlip" value="[Flip]"\></center>
-
-          <script>
-          function sendCoinflip(){
-            $.ajax({
-                url: 'coinFlip.php',
-                type:'POST',
-                data:
-                {
-                    einsatz: document.getElementById("coinFlipBox").value
-                }
-            });
-          }
-          </script>
+              <center><button type="submit" class ="btnClicker" id="btnCoinFlip">Flip</Button></center>
+          </form>
 
 
       </div>
