@@ -63,8 +63,8 @@ if(!isset($_SESSION))
 
     function darfRegistrieren(){//Checkt, ob schon 3 tage her ist wo die reg zahl wieder zurück auf 0 gesetzt wurde
       $actualDate = new DateTime();
-      $database = mysqli_connect("db4free.net", "oeg2100", "L7cnyeN9DA@Ywx3");
-      mysqli_select_db($database, "gamblegame");
+      $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
+      mysqli_select_db($database, "GambleDB");
       $seineIP = $_SERVER['REMOTE_ADDR'];
       $lastUpdateDate = $database -> query("select lastRegister from iplist where IP = '$seineIP'") or die ("Fehler: ".mysqli_error($database));
             $lastUpdateDate = mysqli_fetch_array($lastUpdateDate)[0];
