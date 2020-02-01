@@ -27,8 +27,8 @@ if(isset($_SESSION["username"])){
 
         <div>
           <h1><u>Willkommen bei GambleGame</u></h1>
-        <h2 class= "subHeading">-Zocken ohne Grenzen-</h2>
-                  <p class="text">Hertzlich willkommen auf der Website des OEG-Accounts <b>2100</b>. Hier kannst du dir dein Kapital erklicken, um es anschließend in einem unterhanltsamen SevenEleven-Spiel zu verzocken. Wirst du die Millarden erreichen können oder als größter Pechvogel in die Geschichte eingehen? Registriere dich jetzt und werde zu einen der größten Spieler des GambleGames und ringe um der 1. Platz auf der Toplist!</p>
+        <center><h2 class= "subHeading">-Zocken ohne Grenzen-</h2></center>
+                  <p class="text">Herzlich willkommen auf der Website des OEG-Accounts <b>2100</b>. Hier kannst du dir dein Kapital erklicken, um es anschließend in einem unterhanltsamen SevenEleven-Spiel zu verzocken. Wirst du die Millarden erreichen können oder als größter Pechvogel in die Geschichte eingehen? Registriere dich jetzt und werde zu einen der größten Spieler des GambleGames und ringe um der 1. Platz auf der Toplist!</p>
         </div>
       </div>
     </body>
