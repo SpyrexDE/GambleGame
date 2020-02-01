@@ -29,7 +29,7 @@
               if(file_exists("../img/userIMGS/".$username.".jpg")){
                 $_SESSION["image"] = "../img/userIMGS/".$username.".jpg";
               } else {
-                $_SESSION["image"] = "../img/logo.jpg";
+                $_SESSION["image"] = "../img/userIMGS/".$username.".jpg";
               }
 
               setcookie("coins", $row["coins"]);
