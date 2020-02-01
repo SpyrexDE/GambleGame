@@ -30,5 +30,8 @@ if(!empty($einsatz)){
     $_SESSION['notification'] = ["error", "Bitte trage deinen Einsatz ein."];
 }
 
+$result = $database -> query("select * from users where username = '$username'") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
+$row = $result->fetch_array();
 $_COOKIE["coins"] = $row['coins'];
+
 header("location: LIVerdienen.php");
