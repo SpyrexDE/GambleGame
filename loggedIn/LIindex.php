@@ -52,7 +52,7 @@ if (isset($_SESSION['username'])){
           <p class="text">Ich freue mich sehr, dass du dich registrieren konntest und eingeloggt hast. Bei dem Menüpunkt "Verdienen" kannst du dir dein Kapital zusammen klicken, und in Glückspiel investieren. Der Menüpunkt "Statistiken" zeigt dir die zehn besten Spieler des Spiels und deren Kontostand an. Wirst du es auch in diese Liste schaffen?</p>
         <hr/>
            <h2 class= "subHeading">Letzte Updates</h2>
-            <ul>
+            <ul class = "text">
                 <li>XSS gefixt</li>
                 <li>Cookie-Editing gefixt</li>
                 <li>Mobile Optimierungen</li>
