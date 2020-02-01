@@ -24,7 +24,7 @@ if (isset($_SESSION['username'])){
         </div>
 
       <div class="content">
-
+        <center>
         <!--NOTIFICATION-LISTENER-->
 
       <?php
@@ -92,9 +92,9 @@ if (isset($_SESSION['username'])){
           <div class="section">
               <h1 style="margin-bottom: 0;">Klicker</h1>
 
-              <center><input onclick="addCoins(1); sendClick();" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\></center>
+              <input onclick="addCoins(1); sendClick();" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\>
           </div>
-          
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 </script>
 
@@ -118,12 +118,12 @@ if (isset($_SESSION['username'])){
               <h1>Coinflip</h1>
               <p class = "text">Wenn du gewinnst, wird sich dein Einsatz vedoppeln. Wenn nicht, dann ist dein Einsatz weg.</p>
               <form action="coinFlip.php" method="POST">
-                  <center><input type="text" class="textbox" value="10" name="einsatz"></input></center>
+                  <input type="text" class="textbox" value="10" name="einsatz"></input>
 
-                  <center><input type="submit" class ="btnClicker" id="btnCoinFlip" value="[Flip]"/></center>
+                  <input type="submit" class ="btnClicker" id="btnCoinFlip" value="[Flip]"/>
               </form>
          </div>
-
+        <center>
       </div>
     </body>
 </html>
