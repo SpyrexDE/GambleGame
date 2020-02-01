@@ -11,7 +11,7 @@ mysqli_select_db($database, "GambleDB");
 $result = $database -> query("select * from users where username = '$username'") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
 $row = $result->fetch_array();
 
-if(!empty($einsatz)){
+if(!empty($einsatz) && $einsatz > 0){
   if($row['coins'] >= $einsatz){
     $randomInt = rand(0, 1);
       if($randomInt == 0){
