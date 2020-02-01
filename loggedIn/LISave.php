@@ -24,7 +24,8 @@ $_SESSION['notification'] = ["success", "Erfolgreich gespeichert!"];
   $_SESSION['notification'] = ["error", "Cheaten ist böse!"];
 }
 //Clicks resetten
-setcookie('clicks', null, -1, '/'); 
+setcookie('clicks', null, -1, '/');
+$database -> query("UPDATE users SET clicks='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
 //Coins zuruecksetzten
 //setcookie("coins", $row["coins"], 356, '/'); 
 
