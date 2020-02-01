@@ -28,7 +28,6 @@ if (isset($_SESSION['username'])){
             <a href="LIVerdienen.php">Verdienen</a>
             <a class="active" href="LIStats.php">Statistiken</a>
             <?php echo "<label class='text'>Geld: ".$_COOKIE['coins']."</label>"; ?>
-            <a id="Btn_Save" href="LISave.php">Speichern</a>
             <a id="Btn_Logout" href="LILogout.php">Logout</a>
 
         </div>
