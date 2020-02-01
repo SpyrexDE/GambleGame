@@ -47,12 +47,19 @@ if (isset($_SESSION['username'])){
           
           
         <div>
-          <h1><u>Under construction</u></h1>
-        <h2 class= "subHeading">Lorem ipsum dolor sit amet,</h2>
-          <p class="text">consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <h1>GambleGame</h1>
+        <h2 class= "subHeading"><u>Willkommen im Spiel <b><?php echo $_SESSION['username'];?></b>!</u></h2>
+          <p class="text">Ich freue mich sehr, dass du dich registrieren konntest und eingeloggt hast. Bei dem Menüpunkt "Verdienen" kannst du dir dein Kapital zusammen klicken, und in Glückspiel investieren. Der Menüpunkt "Statistiken" zeigt dir die zehn besten Spieler des Spiels und deren Kontostand an. Wirst du es auch in diese Liste schaffen?</p>
         <hr/>
-          <h2 class= "subHeading">Willkommen im Spiel <b><?php echo $_SESSION['username'];?></b>!</h2>
-          <p class="text">ACHTUNG: Zur Zeit ist in diesem Bereich nur der <b>Logout-Button</b> mit einer Funktion belegt!</p>
+           <h2 class= "subHeading">Letzte Updates</h2>
+            <ul>
+                <li>XSS gefixt</li>
+                <li>Cookie-Editing gefixt</li>
+                <li>Mobile Optimierungen</li>
+                <li>Performance verbesserungen</li>
+                <li>Neue Datenbankverbindung</li>
+                <li>Kleinere bugfixes</li>
+            </ul>
         </div>
       </div>
     </body>
