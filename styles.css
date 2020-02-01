@@ -31,11 +31,11 @@ button{
 }
 
 hr:before{
-  opacity: 0%;
+  opacity: 0;
 }
 
 hr:after{
-  opacity: 100%;
+  opacity: 1;
 }
 
 hr{
