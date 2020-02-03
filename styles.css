@@ -4,7 +4,15 @@ body {
     background-color: #101010;
 }
 
-.text {
+.quickData {
+  text-align: left;
+  margin-left: 12px !important;
+  margin-top: 15 !important;
+  float: left;
+}
+
+.text,
+.quickData {
     color: white;
     font-size: 25px;
     margin: 0px;
