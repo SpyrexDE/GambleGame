@@ -191,6 +191,13 @@ input:focus {
     margin-left: 5px;
     margin-top: 1px;
     border-radius: 20px;
+    transition: filter  0.2s;
+    transition-timing-function: out;
+}
+
+.header .logo:hover {
+  filter: blur(1px) brightness(2);
+  cursor: pointer;
 }
 
 .header a {
