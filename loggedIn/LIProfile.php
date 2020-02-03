@@ -14,12 +14,14 @@ if (isset($_SESSION['username'])){
 
         <div class="header">
 
-            <img class= "logo" src="<?php echo $_SESSION['image'];?>" height="100" width="100">
-                <?php echo "<label class='quickData'>"."Name: ".$_SESSION['username']."<br>"."<label id='labelCoins'>"."Geld: ".$_COOKIE['coins']."</label>"."</label>"; ?>
-            <a class="active" href="LIindex.php">Start</a>
-            <a href="LIVerdienen.php">Verdienen</a>
-            <a href="LIStats.php">Statistiken</a>
-            <a id="Btn_Logout" href="LILogout.php">Logout</a>
+                  <a href="LIProfile.php">
+                    <img class= "logo selected" src="<?php echo $_SESSION['image'];?>" height="100" width="100" >
+                  </a>
+                  <?php echo "<label class='quickData'>"."Name: ".$_SESSION['username']."<br>"."<label id='labelCoins'>"."Geld: ".$_COOKIE['coins']."</label>"."</label>"; ?>
+              <a class="menuButton" href="LIindex.php">Start</a>
+              <a class="menuButton" href="LIVerdienen.php">Verdienen</a>
+              <a class="menuButton" href="LIStats.php">Statistiken</a>
+              <a class="menuButton" id="Btn_Logout" href="LILogout.php">Logout</a>
 
         </div>
 
@@ -46,20 +48,18 @@ if (isset($_SESSION['username'])){
 
 
         <div>
-          <h1>GambleGame</h1>
-        <h2 class= "subHeading">Willkommen im Spiel <b><?php echo $_SESSION['username'];?></b>!</h2>
-          <p class="text">Ich freue mich sehr, dass du dich registrieren konntest und eingeloggt hast. Bei dem Menüpunkt "Verdienen" kannst du dir dein Kapital zusammen klicken, und in Glückspiel investieren. Der Menüpunkt "Statistiken" zeigt dir die zehn besten Spieler des Spiels und deren Kontostand an. Wirst du es auch in diese Liste schaffen?</p>
-        <hr/>
-           <h2 class= "subHeading">Letzte Updates</h2>
-            <ul class = "text">
-                <li>XSS gefixt</li>
-                <li>Cookie-Editing gefixt</li>
-                <li>Mobile Optimierungen</li>
-                <li>Performance verbesserungen</li>
-                <li>Neue Datenbankverbindung</li>
-                <li>Kleinere bugfixes</li>
-                <li>Coinflip hinzugefügt</li>
-            </ul>
+
+        <div class="panel" style="height: 600px;">
+          <img class= "profileLogo" src="<?php echo $_SESSION['image'];?>" height="140" width="140" >
+
+          <?php echo "<label class='profileData'>"."Name: ".$_SESSION['username']."<br>"."<label>"."Geld: ".$_COOKIE['coins']."<br>"."<label>"."Registriert am: ".$_SESSION['registered']."</label>"."</label>"."</label>"; ?>
+
+
+
+        </div>
+
+
+
         </div>
       </div>
     </body>

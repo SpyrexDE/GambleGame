@@ -4,7 +4,8 @@ body {
     background-color: #101010;
 }
 
-.quickData {
+.quickData,
+.profileData {
   text-align: left;
   margin-left: 12px !important;
   margin-top: 15 !important;
@@ -12,8 +13,17 @@ body {
   display: block;
 }
 
+.profileData{
+  margin-left: 10px !important;
+  margin-top: 35 !important;
+  font-size: 23px !important;
+  font-weight: bold;
+  font-family: 'Anton', sans-serif;
+}
+
 .text,
-.quickData {
+.quickData,
+.profileData {
     color: white;
     font-size: 25px;
     margin: 0px;
@@ -142,7 +152,7 @@ hr{
 }
 
 
-.login{
+.panel{
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
@@ -195,12 +205,37 @@ input:focus {
     transition-timing-function: out;
 }
 
+.selected{
+    border: 2px solid #f0b000;
+}
+
+.noHoverLogo{
+    float: left;
+    margin-left: 5px;
+    margin-top: 1px;
+    border-radius: 20px;
+}
+
+.profileLogo{
+  float: left;
+  margin-left: 15px;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
 .header .logo:hover {
   filter: blur(1px) brightness(2);
   cursor: pointer;
 }
 
-.header a {
+.header {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: 'Anton', sans-serif;
+  max-height: 100px;
+}
+
+.menuButton {
   float: none;
   color: white;
   background-color: rgba(31, 23, 0, 0.8);
@@ -214,20 +249,13 @@ input:focus {
   display: inline-block;
 }
 
-.header {
-  font-size: 50px;
-  font-weight: bold;
-  font-family: 'Anton', sans-serif;
-  max-height: 100px;
-}
-
-.header a:hover {
+.menuButton:hover {
   transition-duration: 0.4s;
   background-color: rgba(240, 176, 0, 0.48);
   color: white;
 }
 
-.header a.active {
+.active {
   background-color: #f0b000;
   color: white;
 }

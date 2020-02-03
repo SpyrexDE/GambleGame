@@ -13,12 +13,14 @@ if (isset($_SESSION['username'])){
 
         <div class="header">
 
-            <img class= "logo" src="<?php echo $_SESSION['image'];?>" height="100" width="100">
-                <?php echo "<label class='quickData'>"."Name: ".$_SESSION['username']."<br>"."<label id='labelCoins'>"."Geld: ".$_COOKIE['coins']."</label>"."</label>"; ?>
-            <a onclick="setClicks(clicks)" href="LIindex.php">Start</a>
-            <a onclick="setClicks(clicks)" class="active" href="LIVerdienen.php">Verdienen</a>
-            <a onclick="setClicks(clicks)" href="LIStats.php">Statistiken</a>
-            <a id="Btn_Logout" href="LILogout.php">Logout</a>
+                  <a href="LIProfile.php">
+                    <img class= "logo" src="<?php echo $_SESSION['image'];?>" height="100" width="100" >
+                  </a>
+                  <?php echo "<label class='quickData'>"."Name: ".$_SESSION['username']."<br>"."<label id='labelCoins'>"."Geld: ".$_COOKIE['coins']."</label>"."</label>"; ?>
+              <a class="menuButton" href="LIindex.php">Start</a>
+              <a class="menuButton active" href="LIVerdienen.php">Verdienen</a>
+              <a class="menuButton" href="LIStats.php">Statistiken</a>
+              <a class="menuButton" id="Btn_Logout" href="LILogout.php">Logout</a>
 
         </div>
 

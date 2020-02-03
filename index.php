@@ -15,11 +15,10 @@ if(isset($_SESSION["username"])){
 
         <div class="header">
 
-            <img class= "logo" src="img/logo.jpg" height="100" width="100">
-
-            <a class="active" href="index.php">Start</a>
-            <a href="Login.php">Login</a>
-            <a href="Register.php">Registrieren</a>
+          <img class= "noHoverLogo" src="img/logo.jpg" height="100" width="100" >
+          <a class="menuButton active" href="index.php">Start</a>
+          <a class="menuButton" href="Login.php">Login</a>
+          <a class="menuButton" href="Register.php">Registrieren</a>
 
         </div>
 

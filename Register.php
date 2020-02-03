@@ -17,17 +17,16 @@ if(isset($_SESSION["username"])){
     <body>
         <div class="header">
 
-            <img class= "logo" src="img/logo.jpg" height="100" width="100">
-
-            <a href="index.php">Start</a>
-            <a href="Login.php">Login</a>
-            <a class="active" href="Register.php">Registrieren</a>
+          <img class= "noHoverLogo" src="img/logo.jpg" height="100" width="100" >
+          <a class="menuButton" href="index.php">Start</a>
+          <a class="menuButton" href="Login.php">Login</a>
+          <a class="menuButton active" href="Register.php">Registrieren</a>
 
         </div>
 
       <div class="content">
 
-        <div class="login">
+        <div class="panel">
           <h1>Registrieren</h1>
             <form action="registerProcess.php" method = "POST">
                 <div class="textbox">

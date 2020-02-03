@@ -11,19 +11,18 @@ if(isset($_SESSION["username"])){
 </head>
     <body>
 
-        <div class="header">
+      <div class="header">
 
-            <img class= "logo" src="img/logo.jpg" height="100" width="100">
+        <img class= "noHoverLogo" src="img/logo.jpg" height="100" width="100" >
+        <a class="menuButton" href="index.php">Start</a>
+        <a class="menuButton active" href="Login.php">Login</a>
+        <a class="menuButton" href="Register.php">Registrieren</a>
 
-            <a href="index.php">Start</a>
-            <a class="active"href="Login.php">Login</a>
-            <a href="Register.php">Registrieren</a>
-
-        </div>
+      </div>
 
       <div class="content">
 
-        <div class="login">
+        <div class="panel">
                              <form action="loginProcess.php" method = "POST">
                              <h1>Login</h1>
 
