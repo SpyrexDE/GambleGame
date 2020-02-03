@@ -229,6 +229,7 @@ input:focus {
   background-color: darkred;
   float: right;
   margin-right: 25px;
+  margin-left: 20px;
 }
 
 #Btn_Logout:hover{
