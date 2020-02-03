@@ -23,11 +23,10 @@ if (isset($_SESSION['username'])){
         <div class="header">
 
             <img class= "logo" src="<?php echo $_SESSION['image'];?>" height="100" width="100">
-
+                <?php echo "<label class='quickData'>"."Name: ".$_SESSION['username']."<br>"."<label id='labelCoins'>"."Geld: ".$_COOKIE['coins']."</label>"."</label>"; ?>
             <a href="LIindex.php">Start</a>
             <a href="LIVerdienen.php">Verdienen</a>
             <a class="active" href="LIStats.php">Statistiken</a>
-            <?php echo "<label class='text'>Geld: ".$_COOKIE['coins']."</label>"; ?>
             <a id="Btn_Logout" href="LILogout.php">Logout</a>
 
         </div>

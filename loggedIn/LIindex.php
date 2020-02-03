@@ -14,7 +14,7 @@ if (isset($_SESSION['username'])){
 
         <div class="header">
                 <img class= "logo" src="<?php echo $_SESSION['image'];?>" height="100" width="100">
-                <?php echo "<label class='quickData'>"."Name: ".$_SESSION['username']."<br>"."Geld: ".$_COOKIE['coins']."</label>"; ?>
+                <?php echo "<label class='quickData'>"."Name: ".$_SESSION['username']."<br>"."<label id='labelCoins'>"."Geld: ".$_COOKIE['coins']."</label>"."</label>"; ?>
             <a class="active" href="LIindex.php">Start</a>
             <a href="LIVerdienen.php">Verdienen</a>
             <a href="LIStats.php">Statistiken</a>
