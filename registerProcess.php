@@ -9,7 +9,7 @@ if(!isset($_SESSION))
           $password = strip_tags($_POST['pass']);
           $seineIP = $_SERVER['REMOTE_ADDR'];
 if (!empty($_POST['user'])){
-    if(ctype_alnum($username) && strlen( $username) >= 4 && strlen( $username) <= 10 && strlen( $password) >= 4 && strlen( $password) <= 10 && darfRegistrieren()){
+    if(ctype_alnum($username) && strlen( $username) >= 4 && strlen( $username) <= 10 && strlen( $password) >= 4 && strlen( $password) <= 20 && darfRegistrieren()){
 
 
           //Mit Server verbinden und Datenbank auswaehlen
