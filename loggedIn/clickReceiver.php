@@ -21,7 +21,6 @@ if($lastUpdateDate < $actualDate->modify('-1 day')->format('Y-m-d H:i:s')){
     $database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
     $database -> query("UPDATE users SET dailyCoins='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
 }
-$database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
 
 if($row['dailyCoins'] <= 50){
     if($click == true){
