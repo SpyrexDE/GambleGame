@@ -94,6 +94,7 @@ if (isset($_SESSION['username'])){
               <h1 style="margin-bottom: 0;">Klicker</h1>
 
               <input onclick="addCoins(1); sendClick();" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\>
+              <br>
               <label class="maxCoinsLabel">0/20</label>
 
           </div>
