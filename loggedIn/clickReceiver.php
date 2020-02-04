@@ -11,10 +11,18 @@ mysqli_select_db($database, "GambleDB");
 $result = $database -> query("select * from users where username = '$username'") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
 $row = $result->fetch_array();
 
-if($click == true){
+$actualDate = new DateTime();
+$actualDate = $actualDate->format('Y-m-d H:i:s');
 
-$coins = $row['coins'] + 1;
-$database -> query("UPDATE users SET coins='$coins' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
+if($row['lastClick'] < $actualDate){
+    if($click == true &&  $row['dailyCoins'] <= 50){
 
+    $coins = $row['coins'] + 1;
+    $coins = $row['dailyCoins'] + 1;
+    $database -> query("UPDATE users SET coins='$coins' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
+
+    }
+}else{
+    die("Du hast bereits 50 mal heite geklickt!");
 }
 ?>

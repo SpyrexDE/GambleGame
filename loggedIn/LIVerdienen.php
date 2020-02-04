@@ -69,6 +69,7 @@ if (isset($_SESSION['username'])){
 
               function addCoins(value){
                 setCookie('coins', parseInt(getCookie('coins'))+ value, 365);
+                setCookie('dailyCoins', parseInt(getCookie('dailyCoins'))+ value, 365);
                 refresh();
               }
 
@@ -80,7 +81,9 @@ if (isset($_SESSION['username'])){
               function refresh(){
                   var coins = getCookie('coins');
                   var currency = "Geld: ";
+                  var dailyCoins = getCookie('dailyCoins');
                   var coinStr = coins;
+                  document.getElementById('labelDailyCoins').innerHTML = dailyCoins.concat("/50");
                   document.getElementById('labelCoins').innerHTML = currency.concat(coinStr);
               }
 
@@ -95,7 +98,7 @@ if (isset($_SESSION['username'])){
 
               <input onclick="addCoins(1); sendClick();" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\>
               <br>
-              <label class="maxCoinsLabel">0/20</label>
+              <label class="maxCoinsLabel" id="labelDailyCoins">0/50</label>
 
           </div>
 
