@@ -147,7 +147,8 @@ hr{
   transition-duration: 0.1s;
   transform: scale(1.1,1.1);
 }
-.btnClicker:disabled {
+.btnClicker:disabled,
+.btnClicker:disabled:hover {
   color: gray;
   transform: scale(1,1) !important;
 }
