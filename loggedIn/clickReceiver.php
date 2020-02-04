@@ -14,8 +14,6 @@ $row = $result->fetch_array();
 $actualDate = new DateTime();
 $actualDate = $actualDate->format('Y-m-d H:i:s');
 
-$database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
-
 $lastUpdateDate = $database -> query("select lastRegister from iplist where IP = '$seineIP'") or die ("Fehler: ".mysqli_error($database));
 $lastUpdateDate = mysqli_fetch_array($lastUpdateDate)[0];
 
@@ -23,7 +21,7 @@ if($lastUpdateDate < $actualDate->modify('-1 day')->format('Y-m-d H:i:s')){
     $database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
     $database -> query("UPDATE users SET dailyCoins='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
 }
-
+$database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
 
 if($row['dailyCoins'] <= 50){
     if($click == true){
