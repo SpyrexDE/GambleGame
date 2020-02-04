@@ -149,7 +149,7 @@ hr{
 }
 .btnClicker:disabled,
 .btnClicker:disabled:hover {
-  filter: saturate(0.1);
+  filter: saturate(0.01);
   transform: scale(1,1) !important;
 }
 
