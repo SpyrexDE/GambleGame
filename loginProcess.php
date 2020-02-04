@@ -33,6 +33,7 @@
               }
 
               setcookie("coins", $row["coins"]);
+              setcookie("dailyCoins", $row['dailyCoins']);
 
             $_SESSION['notification'] = ["success", "Erfolgreich eingeloggt."];
               header("location: loggedIn/LIindex.php");
