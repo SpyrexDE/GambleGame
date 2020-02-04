@@ -22,7 +22,7 @@ if(oneDayPast($row['lastClick'], $actualDate)){
     $database -> query("UPDATE users SET dailyCoins='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
 }
 
-if($row['dailyCoins'] <= 50){
+if($row['dailyCoins'] < 50){
     if($click == true){
 
     $coins = $row['coins'] + 1;
