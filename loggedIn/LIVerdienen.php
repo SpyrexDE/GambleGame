@@ -44,10 +44,6 @@ if (isset($_SESSION['username'])){
        ?>
 
           <script>
-                if(getCookie('dailyCoins') >= 50){
-                  document.getElementById("btnClicker").disabled = true;
-                  return;
-                }
 
               function setCookie(cname, cvalue, exdays) {
                   var d = new Date();
@@ -98,6 +94,10 @@ if (isset($_SESSION['username'])){
 
               window.onload = function () {
                   refresh();
+                  if(getCookie('dailyCoins') >= 50){
+                    document.getElementById("btnClicker").disabled = true;
+                    return;
+                  }
               }
           </script>
 
