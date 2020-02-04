@@ -147,7 +147,9 @@ hr{
   transition-duration: 0.1s;
   transform: scale(1.1,1.1);
 }
-
+.btnClicker:disabled {
+  background: grey;
+}
 
 .icon{
   font-size: 20px;
