@@ -149,6 +149,7 @@ hr{
 }
 .btnClicker:disabled {
   color: gray;
+  transform: scale(1,1) !important;
 }
 
 .icon{
