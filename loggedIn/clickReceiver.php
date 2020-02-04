@@ -41,11 +41,11 @@ function oneDayPast($oldDay, $newDay){
     $newDay = date("y-m-d", strtotime($oldDay));
     $today = date("y-m-d", strtotime("today"));
 
-    if ($newDay === $today)
+    if ($oldDay >= $today)
     {
         return false;
     }
-    elseif ($newDay < $today)
+    else
     {
         return true;
     }
