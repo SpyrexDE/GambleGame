@@ -17,7 +17,7 @@ $actualDate = $actualDate->format('Y-m-d H:i:s');
 $lastUpdateDate = $database -> query("select lastRegister from iplist where IP = '$seineIP'") or die ("Fehler: ".mysqli_error($database));
 $lastUpdateDate = mysqli_fetch_array($lastUpdateDate)[0];
 
-if($lastUpdateDate < $actualDate->modify('-1 Day')->format('Y-m-d H:i:s')){
+if($lastUpdateDate < $actualDate->modify('-1 d')->format('Y-m-d H:i:s')){
     $database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
     $database -> query("UPDATE users SET dailyCoins='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
 }
