@@ -27,8 +27,9 @@ if($row['dailyCoins'] <= 50){
     if($click == true){
 
     $coins = $row['coins'] + 1;
-    $coins = $row['dailyCoins'] + 1;
+    $dailyCoins = $row['dailyCoins'] + 1;
     $database -> query("UPDATE users SET coins='$coins' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
+    $database -> query("UPDATE users SET dailyCoins='$dailyCoins' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
     }
 }else{
     die("Du hast bereits 50 mal heite geklickt!");
