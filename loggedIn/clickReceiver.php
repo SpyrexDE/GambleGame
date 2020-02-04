@@ -17,7 +17,7 @@ $actualDate = $actualDate->format('Y-m-d H:i:s');
 $lastUpdateDate = $database -> query("select lastRegister from iplist where IP = '$seineIP'") or die ("Fehler: ".mysqli_error($database));
 $lastUpdateDate = mysqli_fetch_array($lastUpdateDate)[0];
 
-if($lastUpdateDate < $actualDate->modify('-1 day')->format('Y-m-d H:i:s')){
+if(oneDayPast($row['lastClick'], $actualDate)){
     $database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
     $database -> query("UPDATE users SET dailyCoins='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
 }
@@ -34,4 +34,21 @@ if($row['dailyCoins'] <= 50){
     $_SESSION['notification'] = ["error", "Du hast heute bereits 50 mal geklickt!"];
     header("location: LIVerdienen.php");
 }
+
+
+function oneDayPast($oldDay, $newDay){
+    $oldDay = '12-05-12';
+    $newDay = date("y-m-d", strtotime($oldDay));
+    $today = date("y-m-d", strtotime("today"));
+
+    if ($newDay === $today)
+    {
+        return false;
+    }
+    elseif ($denDay < $today)
+    {
+        return true;
+    }
+}
+
 ?>
