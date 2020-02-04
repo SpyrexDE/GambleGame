@@ -37,10 +37,6 @@ if($row['dailyCoins'] < 50){
 
 
 function oneDayPast($oldDay, $newDay){
-    $oldDay = '12-05-12';
-    $newDay = date("y-m-d", strtotime($oldDay));
-    $today = date("y-m-d", strtotime("today"));
-
     if ($oldDay >= $today)
     {
         return false;
