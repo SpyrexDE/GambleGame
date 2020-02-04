@@ -45,7 +45,7 @@ function oneDayPast($oldDay, $newDay){
     {
         return false;
     }
-    elseif ($denDay < $today)
+    elseif ($newDay < $today)
     {
         return true;
     }
