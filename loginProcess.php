@@ -35,6 +35,38 @@
               setcookie("coins", $row["coins"]);
               setcookie("dailyCoins", $row['dailyCoins']);
 
+              $actualDate = new DateTime();
+              $actualDate = $actualDate->format('Y-m-d H:i:s');
+              
+              
+
+              //Reset DailyMaxCoins
+
+
+
+              if(oneDayPast($row['lastClick'], $actualDate)){
+                  $database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
+                  $database -> query("UPDATE users SET dailyCoins='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
+              }
+              
+              
+              function oneDayPast($oldDay, $newDay){
+                  if ($oldDay >= $today)
+                  {
+                      return false;
+                  }
+                  else
+                  {
+                      return true;
+                  }
+              }
+
+
+
+
+
+
+
             $_SESSION['notification'] = ["success", "Erfolgreich eingeloggt."];
               header("location: loggedIn/LIindex.php");
           } else {
