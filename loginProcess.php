@@ -42,7 +42,7 @@
               //Reset DailyMaxCoins
 
               $actualDate = new DateTime();
-              $actualDate = $actualDate->format('Y-m-d H:m:s');
+              $actualDate = $actualDate->format('Y-m-d');
 
               setcookie("actualDate", $actualDate);
 
