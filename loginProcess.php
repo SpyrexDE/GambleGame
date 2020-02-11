@@ -44,7 +44,7 @@
               $actualDate = new DateTime();
               $actualDate = $actualDate->format('Y-m-d');
 
-              if(strval($oldDay) != strval($today)){
+              if(strval($oldDay) == strval($today)){
                   $database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
                   $database -> query("UPDATE users SET dailyCoins='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
               }
