@@ -44,8 +44,6 @@
               $actualDate = new DateTime();
               $actualDate = $actualDate->format('Y-m-d');
 
-              setcookie("actualDate", $actualDate);
-
               if(oneDayPast($row['lastClick'], $actualDate)){
                   $database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
                   $database -> query("UPDATE users SET dailyCoins='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
@@ -53,7 +51,7 @@
               
               
               function oneDayPast($oldDay, $newDay){
-                  if ($oldDay >= $today)
+                  if ($oldDay <= $today)
                   {
                       return false;
                   }
