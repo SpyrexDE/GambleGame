@@ -44,6 +44,7 @@
               $actualDate = new DateTime();
               $actualDate = $actualDate->format('Y-m-d');
 
+              setcookie("actualDate", $actualDate);
 
               if(oneDayPast($row['lastClick'], $actualDate)){
                   $database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
