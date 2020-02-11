@@ -44,22 +44,11 @@
               $actualDate = new DateTime();
               $actualDate = $actualDate->format('Y-m-d');
 
-              if(oneDayPast($row['lastClick'], $actualDate)){
+              if(strval($oldDay) != strval($today)){
                   $database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
                   $database -> query("UPDATE users SET dailyCoins='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
               }
               
-              
-              function oneDayPast($oldDay, $newDay){
-                  if (strval($oldDay) != strval($today))
-                  {
-                      return true;
-                  }
-                  else
-                  {
-                      return false;
-                  }
-              }
 
 
 
