@@ -42,7 +42,7 @@
               //Reset DailyMaxCoins
 
               $actualDate = new DateTime();
-              $actualDate = $actualDate->format('Y-m-d H:i:s');
+              $actualDate = $actualDate->format('Y-m-d');
 
 
               if(oneDayPast($row['lastClick'], $actualDate)){
