@@ -51,7 +51,7 @@
               
               
               function oneDayPast($oldDay, $newDay){
-                  if ($oldDay != $today)
+                  if (strval($oldDay) != strval($today))
                   {
                       return true;
                   }
