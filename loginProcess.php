@@ -34,14 +34,15 @@
 
               setcookie("coins", $row["coins"]);
               setcookie("dailyCoins", $row['dailyCoins']);
+              setcookie("lastClick", $row['lastClick']);
 
-              $actualDate = new DateTime();
-              $actualDate = $actualDate->format('Y-m-d H:i:s');
               
               
 
               //Reset DailyMaxCoins
 
+              $actualDate = new DateTime();
+              $actualDate = $actualDate->format('Y-m-d H:i:s');
 
 
               if(oneDayPast($row['lastClick'], $actualDate)){
