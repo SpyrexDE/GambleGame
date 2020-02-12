@@ -66,7 +66,7 @@ function verloren(){
 }
 
 function endSchleife(){
-      echo "endschleife";
+      echo "endschleife     |       ";
           $wurfSumme = wurf();
           if($wurfSumme == 7){
             verloren();
