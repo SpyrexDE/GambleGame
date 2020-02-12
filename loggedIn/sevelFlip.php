@@ -19,11 +19,11 @@ if(!empty($einsatz) && $einsatz > 0){
     $ersteSumme = $wurfSumme;
 
       if($wurfSumme == 7 || $wurfSumme == 11){
-          gewonnen($einsatz);
+          gewonnen();
       }else if($wurfSumme == 2 || $wurfSumme == 3 || $wurfSumme == 12){
-          verloren($einsatz);
+          verloren();
       } else {
-        endSchleife($ersteSumme, $einsatz);
+        endSchleife();
       }
       
       
@@ -51,32 +51,28 @@ function wurf(){
   return $wurfSumme;
 }
 
-function gewonnen($einsatz){
+function gewonnen(){
         $gewonnen = $row['coins'] + $einsatz;
         $database -> query("UPDATE users SET coins='$gewonnen' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
         $_SESSION['notification'] = ["success", $resultStr + " » Gewonnen"];
       echo "gewonnen";
 }
 
-function verloren($einsatz){
+function verloren(){
         $verloren = $row['coins'] - $einsatz;
         $database -> query("UPDATE users SET coins='$verloren' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
         $_SESSION['notification'] = ["error", $resultStr + " » Verloren"];
       echo "verloren";
 }
 
-function endSchleife($ersteSumme, $einsatz){
-      echo "endschleife | ";
+function endSchleife(){
           $wurfSumme = wurf();
           if($wurfSumme == 7){
-            echo "o1";
-            verloren($einsatz);
+            verloren();
           } else if($wurfSumme == $ersteSumme){
-              echo "o2";
-              gewonnen($einsatz);
+              gewonnen();
           } else{
-              echo "o3";
-              endSchleife($ersteSumme, $einsatz);
+              endSchleife();
           }
           
 }
