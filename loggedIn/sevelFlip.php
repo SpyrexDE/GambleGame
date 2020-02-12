@@ -52,10 +52,9 @@ function wurf(){
 }
 
 function gewonnen(){
-        $_SESSION['notification'] = ["success", "Hurra"];
         //$gewonnen = $row['coins'] + $einsatz;
         $updstring = "UPDATE users SET coins='$gewonnen' WHERE username='$username'";
-        echo "<p>$updstring</p>";
+        $_SESSION['notification'] = ["success", $updstring];
         //$_SESSION['notification'] = ["success", $resultStr + $updstring];
         //$database -> query($updstring) or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
         //$_SESSION['notification'] = ["success", $resultStr + " » Gewonnen"];
