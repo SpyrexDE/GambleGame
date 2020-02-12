@@ -1,6 +1,6 @@
 <?php
 session_start();
-echo "test";
+
 $username = $_SESSION["username"];
 $einsatz = $_POST["einsatz"];
 
@@ -26,7 +26,7 @@ if(!empty($einsatz) && $einsatz > 0){
         endSchleife();
       }
       
-      
+      echo "test";
       
   } else {
     $_SESSION['notification'] = ["error", "Du besitzt nicht genug Geld dafür."];
