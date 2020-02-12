@@ -23,7 +23,7 @@ if(!empty($einsatz) && $einsatz > 0){
       }else if($wurfSumme == 2 || $wurfSumme == 3 || $wurfSumme == 12){
           verloren();
       } else {
-        endSchleife();
+        endSchleife($ersteSumme);
       }
       
       
@@ -65,13 +65,13 @@ function verloren(){
       echo "verloren";
 }
 
-function endSchleife(){
+function endSchleife($erstSumme){
       echo "endschleife | ";
           $wurfSumme = wurf();
           if($wurfSumme == 7){
             echo "o1";
             verloren();
-          } else if($wurfSumme == $ersteSumme){
+          } else if($wurfSumme == $erstSumme){
               echo "o2";
               gewonnen();
           } else{
