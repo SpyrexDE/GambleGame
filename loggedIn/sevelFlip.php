@@ -15,15 +15,15 @@ if(!empty($einsatz) && $einsatz > 0){
   if($row['coins'] >= $einsatz){
   
     $resultStr = "";
+    $wurfSumme = wurf();
+    $ersteSumme = $wurfSumme;
     
       if($wurfSumme == 7 || $wurfSumme == 11){
-        $gewonnen = $row['coins'] + $einsatz;
-        $database -> query("UPDATE users SET coins='$gewonnen' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
-        $_SESSION['notification'] = ["success", $resultStr + " -> Gewonnen"];
+          gewonnen();
       }else if($wurfSumme == 2 || $wurfSumme == 3 || $wurfSumme == 12){
-        $verloren = $row['coins'] - $einsatz;
-        $database -> query("UPDATE users SET coins='$verloren' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
-        $_SESSION['notification'] = ["error", "Du hast beim Coinflip verloren!"];
+          verloren();
+      } else {
+        endSchleife();
       }
       
       
@@ -50,4 +50,28 @@ function wurf(){
     $wurfSumme = $wurfZahl1 + $wurfZahl2;
   $resultStr += "Würfel1: " + $wurfZahl1 + ", Würfel2: " + $wurfZahl2 + " | Würfelsumme: " + $wurfSumme;
   return $wurfSumme;
+}
+
+function gewonnen(){
+        $gewonnen = $row['coins'] + $einsatz;
+        $database -> query("UPDATE users SET coins='$gewonnen' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
+        $_SESSION['notification'] = ["success", $resultStr + " » Gewonnen"];
+}
+
+function verloren(){
+        $verloren = $row['coins'] - $einsatz;
+        $database -> query("UPDATE users SET coins='$verloren' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
+        $_SESSION['notification'] = ["error", $resultStr + " » Verloren"];
+}
+
+function endSchleife(){
+          $wurfSumme = wurf();
+          if($wurfSumme == 7){
+            verloren();
+          } else if($wurfSumme == $ersteSumme){
+              gewonnen();
+          } else{
+              endSchleife();
+          }
+          
 }
