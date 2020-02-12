@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+echo "test";
 $username = $_SESSION["username"];
 $einsatz = $_POST["einsatz"];
 
