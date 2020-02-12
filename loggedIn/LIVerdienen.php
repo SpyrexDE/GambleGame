@@ -140,7 +140,7 @@ if (isset($_SESSION['username'])){
               </form>
          </div>
             
-            
+            <hr>
             
           <div class="section">
               <h1>SevenEleven</h1>
