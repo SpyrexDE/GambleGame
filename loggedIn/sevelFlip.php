@@ -17,13 +17,15 @@ if(!empty($einsatz) && $einsatz > 0){
     $resultStr = "";
     $wurfSumme = wurf();
     $ersteSumme = $wurfSumme;
-    echo $wurfSumme;
+
       if($wurfSumme == 7 || $wurfSumme == 11){
           gewonnen();
       }else if($wurfSumme == 2 || $wurfSumme == 3 || $wurfSumme == 12){
           verloren();
       } else {
+            echo $wurfSumme;
         endSchleife();
+            echo $wurfSumme;
       }
       
       
