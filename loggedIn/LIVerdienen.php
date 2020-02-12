@@ -139,6 +139,21 @@ if (isset($_SESSION['username'])){
                   <input type="submit" class ="btnClicker" id="btnCoinFlip" value="[Flip]"/>
               </form>
          </div>
+            
+            
+            
+          <div class="section">
+              <h1>SevenEleven</h1>
+              <p class = "text">Das bekannte SevenEleven-Glücksspiel!</p>
+              <form action="sevelFlip.php" method="POST">
+                <p class = "text"><b>Einsatz:<b>
+                    <input type="text" class="textbox" value="10" name="einsatz" id="textboxCoinFlip"></input>
+                </p>
+                  <input type="submit" class ="btnClicker" id="btnCoinFlip" value="[Würfeln]"/>
+              </form>
+         </div>            
+            
+            
         <center>
       </div>
     </body>
