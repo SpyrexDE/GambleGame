@@ -69,14 +69,14 @@ function endSchleife(){
       echo "endschleife | ";
           $wurfSumme = wurf();
           if($wurfSumme == 7){
+            echo "o1";
             verloren();
-                  echo "o1";
           } else if($wurfSumme == $ersteSumme){
+              echo "o2";
               gewonnen();
-                  echo "o2";
           } else{
+              echo "o3";
               endSchleife();
-                  echo "o3";
           }
           
 }
