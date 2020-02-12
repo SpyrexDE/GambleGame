@@ -52,7 +52,7 @@ function wurf(){
 }
 
 function gewonnen(){
-        $gewonnen = $row['coins'] + $einsatz;
+        //$gewonnen = $row['coins'] + $einsatz;
         $updstring = "UPDATE users SET coins='$gewonnen' WHERE username='$username'";
         echo "<p>$updstring</p>";
         //$_SESSION['notification'] = ["success", $resultStr + $updstring];
@@ -61,9 +61,9 @@ function gewonnen(){
 }
 
 function verloren(){
-        $verloren = $row['coins'] - $einsatz;
-        $database -> query("UPDATE users SET coins='$verloren' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
-        $_SESSION['notification'] = ["error", $resultStr + " » Verloren"];
+        //$verloren = $row['coins'] - $einsatz;
+        //$database -> query("UPDATE users SET coins='$verloren' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
+        //$_SESSION['notification'] = ["error", $resultStr + " » Verloren"];
 }
 
 function endSchleife(){
