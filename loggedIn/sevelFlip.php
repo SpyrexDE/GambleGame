@@ -52,7 +52,7 @@ function wurf(){
 }
 
 function gewonnen(){
-        //$gewonnen = $row['coins'] + $einsatz;
+        $gewonnen = $row['coins'] + $einsatz;
         $updstring = "UPDATE users SET coins='$gewonnen' WHERE username='$username'";
         $_SESSION['notification'] = ["success", $updstring];
         //$_SESSION['notification'] = ["success", $resultStr + $updstring];
