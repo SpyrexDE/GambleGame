@@ -45,18 +45,19 @@ header("location: LIVerdienen.php");
 
 function wurf(){
     global $resultStr;
+  die($resultStr);
     $wurfZahl1 = rand(1, 6);
     $wurfZahl2 = rand(1, 6);
     $wurfSumme = $wurfZahl1 + $wurfZahl2;
-  $resultStr += "Würfel1: " + $wurfZahl1 + ", Würfel2: " + $wurfZahl2 + " | Würfelsumme: " + $wurfSumme;
-  return $wurfSumme;
+    $resultStr += "Würfel1: " + $wurfZahl1 + ", Würfel2: " + $wurfZahl2 + " | Würfelsumme: " + $wurfSumme;
+    return $wurfSumme;
 }
 
 function gewonnen(){
         global $row;
         global $einsatz;
         global $resultStr;
-        die($username);
+        global $username;
         $gewonnen = $row['coins'] + $einsatz;
         $database -> query("UPDATE users SET coins='$gewonnen' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
         $_SESSION['notification'] = ["success", $resultStr + " » Gewonnen"];
