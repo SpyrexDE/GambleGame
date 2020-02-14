@@ -59,7 +59,7 @@ function gewonnen(){
         global $resultStr;
         $gewonnen = $row['coins'] + $einsatz;
         $database -> query("UPDATE users SET coins='$gewonnen' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
-        $_SESSION['notification'] = ["success", $resultStr + " » Gewonnen"];
+        $_SESSION['notification'] = ["success", $resultStr + " » Gewonnen" + $gewonnen + $resultStr];
 }
 
 function verloren(){
