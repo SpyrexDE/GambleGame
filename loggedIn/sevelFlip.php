@@ -1,9 +1,22 @@
 <?php
 session_start();
 try{
+$username = $_SESSION["username"];
+$einsatz = $_POST["einsatz"];
+
+//Mit Server verbinden und Datenbank auswaehlen
+$database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
+mysqli_select_db($database, "GambleDB");
+
+$result = $database -> query("select * from users where username = '$username'") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
+$row = $result->fetch_array();
+
   
   
   
+  
+  
+    
   function wurf(){
     global $resultStr;
     $wurfZahl1 = rand(1, 6);
@@ -51,16 +64,12 @@ function endSchleife(){
   
   
   
-$username = $_SESSION["username"];
-$einsatz = $_POST["einsatz"];
-
-//Mit Server verbinden und Datenbank auswaehlen
-$database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
-mysqli_select_db($database, "GambleDB");
-
-$result = $database -> query("select * from users where username = '$username'") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
-$row = $result->fetch_array();
-
+  
+  
+  
+  
+  
+  
 if(!empty($einsatz) && $einsatz > 0){
   if($row['coins'] >= $einsatz){
     $resultStr = "";
