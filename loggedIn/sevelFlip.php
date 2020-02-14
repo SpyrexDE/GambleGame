@@ -70,6 +70,7 @@ function verloren(){
 }
 
 function endSchleife(){
+          global $ersteSumme;
           $wurfSumme = wurf();
           if($wurfSumme == 7){
             verloren();
