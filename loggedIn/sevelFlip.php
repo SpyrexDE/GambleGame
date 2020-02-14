@@ -19,13 +19,10 @@ if(!empty($einsatz) && $einsatz > 0){
     die("1 - " + $resultStr);
       if($wurfSumme == 7 || $wurfSumme == 11){
           gewonnen();
-            die("2 - " + $resultStr);
       }else if($wurfSumme == 2 || $wurfSumme == 3 || $wurfSumme == 12){
           verloren();
-            die("3 - " + $resultStr);
       } else {
           endSchleife();
-            die("4 - " + $resultStr);
       }
       
       
