@@ -45,7 +45,7 @@ function wurf(){
     global $resultStr;
     $wurfZahl1 = rand(1, 6);
     $wurfZahl2 = rand(1, 6);
-    $wurfSumme = $wurfZahl1 + $wurfZahl2;die("1");
+    $wurfSumme = $wurfZahl1 + $wurfZahl2;
     $strToAdd = "Würfel1: $wurfZahl1, Würfel2: $wurfZahl2 | Würfelsumme: $wurfSumme";die("2");
     $resultStr .= $strToAdd;die("3");
     return $wurfSumme;
