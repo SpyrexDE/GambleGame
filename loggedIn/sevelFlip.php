@@ -13,7 +13,7 @@ $row = $result->fetch_array();
 
 if(!empty($einsatz) && $einsatz > 0){
   if($row['coins'] >= $einsatz){
-    $resultStr = "Str";
+    $resultStr = "";
     $wurfSumme = wurf();
     $ersteSumme = $wurfSumme;
     die("1 - " + $resultStr);
@@ -51,7 +51,6 @@ function wurf(){
     $wurfZahl2 = rand(1, 6);
     $wurfSumme = $wurfZahl1 + $wurfZahl2;
     $resultStr .= "Würfel1: " . $wurfZahl1 . ", Würfel2: " . $wurfZahl2 . " | Würfelsumme: " . $wurfSumme;
-          die($resultStr);
     return $wurfSumme;
 }
 
@@ -66,10 +65,13 @@ function gewonnen(){
 }
 
 function verloren(){
-        $_SESSION['notification'] = ["success", "Grummel"];
-        //$verloren = $row['coins'] - $einsatz;
-        //$database -> query("UPDATE users SET coins='$verloren' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
-        //$_SESSION['notification'] = ["error", $resultStr + " » Verloren"];
+        global $row;
+        global $einsatz;
+        global $resultStr;
+        global $username;
+        $verloren = $row['coins'] - $einsatz;
+        $database -> query("UPDATE users SET coins='$verloren' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
+        $_SESSION['notification'] = ["error", $resultStr + " » Verloren"];
 }
 
 function endSchleife(){
