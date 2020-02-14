@@ -55,7 +55,7 @@ function gewonnen(){
         global $row;
         global $einsatz;
         global $username;
-        global $resultStr
+        global $resultStr;
         $_SESSION['notification'] = ["success", $resultStr + $updstring];
         $database -> query($updstring) or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
         $_SESSION['notification'] = ["success", $resultStr + " » Gewonnen"];
