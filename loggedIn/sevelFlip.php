@@ -23,7 +23,7 @@ if(!empty($einsatz) && $einsatz > 0){
       }else if($wurfSumme == 2 || $wurfSumme == 3 || $wurfSumme == 12){
           verloren();
       } else {
-        endSchleife();
+          endSchleife();
       }
       
       
