@@ -16,7 +16,6 @@ if(!empty($einsatz) && $einsatz > 0){
     $resultStr = "";
     $wurfSumme = wurf();
     $ersteSumme = $wurfSumme;
-    die("1 - " + $resultStr);
       if($wurfSumme == 7 || $wurfSumme == 11){
           gewonnen();
       }else if($wurfSumme == 2 || $wurfSumme == 3 || $wurfSumme == 12){
