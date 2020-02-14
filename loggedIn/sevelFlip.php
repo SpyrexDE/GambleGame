@@ -31,7 +31,7 @@ if(!empty($einsatz) && $einsatz > 0){
 } else {
     $_SESSION['notification'] = ["error", "Bitte trage deinen Einsatz ein."];
 }
-
+die("f");
 $result = $database -> query("select * from users where username = '$username'") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
 $row = $result->fetch_array();
 setcookie("coins", $row["coins"], time()+3600, "/");
