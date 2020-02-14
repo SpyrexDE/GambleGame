@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+try{
 $username = $_SESSION["username"];
 $einsatz = $_POST["einsatz"];
 
@@ -82,5 +82,10 @@ function endSchleife(){
               endSchleife();
           }
           
+}
+} 
+catch(Error $e) {
+    $trace = $e->getTrace();
+    echo $e->getMessage().' in '.$e->getFile().' on line '.$e->getLine().' called from '.$trace[0]['file'].' on line '.$trace[0]['line'];
 }
 ?>
