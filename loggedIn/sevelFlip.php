@@ -15,8 +15,8 @@ if(!empty($einsatz) && $einsatz > 0){
   if($row['coins'] >= $einsatz){
   
     $resultStr = "";
-    $wurfSumme = wurf();
     $ersteSumme = $wurfSumme;
+    $wurfSumme = wurf();
 
       if($wurfSumme == 7 || $wurfSumme == 11){
           gewonnen();
@@ -45,7 +45,6 @@ header("location: LIVerdienen.php");
 
 function wurf(){
     global $resultStr;
-  die($resultStr);
     $wurfZahl1 = rand(1, 6);
     $wurfZahl2 = rand(1, 6);
     $wurfSumme = $wurfZahl1 + $wurfZahl2;
