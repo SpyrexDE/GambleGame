@@ -15,6 +15,7 @@ if(!empty($einsatz) && $einsatz > 0){
   if($row['coins'] >= $einsatz){
   
     $resultStr = "";
+    die("0 - " + $resultStr);
     $wurfSumme = wurf();
     $ersteSumme = $wurfSumme;
     die("1 - " + $resultStr);
