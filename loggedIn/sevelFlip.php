@@ -1,47 +1,10 @@
 <?php
 session_start();
 try{
-$username = $_SESSION["username"];
-$einsatz = $_POST["einsatz"];
-
-//Mit Server verbinden und Datenbank auswaehlen
-$database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
-mysqli_select_db($database, "GambleDB");
-
-$result = $database -> query("select * from users where username = '$username'") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
-$row = $result->fetch_array();
-
-if(!empty($einsatz) && $einsatz > 0){
-  if($row['coins'] >= $einsatz){
-    $resultStr = "";
-    $wurfSumme = $this->wurf();
-    $ersteSumme = $wurfSumme;
-      if($wurfSumme == 7 || $wurfSumme == 11){
-          $this->gewonnen();
-      }else if($wurfSumme == 2 || $wurfSumme == 3 || $wurfSumme == 12){
-          $this->verloren();
-      } else {
-          $this->endSchleife();
-      }
-      
-      
-  } else {
-    $_SESSION['notification'] = ["error", "Du besitzt nicht genug Geld dafür."];
-  }
-} else {
-    $_SESSION['notification'] = ["error", "Bitte trage deinen Einsatz ein."];
-}
-
-$result = $database -> query("select * from users where username = '$username'") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
-$row = $result->fetch_array();
-setcookie("coins", $row["coins"], time()+3600, "/");
-
-header("location: LIVerdienen.php");
-
-
-
-
-function wurf(){
+  
+  
+  
+  function wurf(){
     global $resultStr;
     $wurfZahl1 = rand(1, 6);
     $wurfZahl2 = rand(1, 6);
@@ -83,6 +46,61 @@ function endSchleife(){
           }
           
 }
+  
+  
+  
+  
+  
+$username = $_SESSION["username"];
+$einsatz = $_POST["einsatz"];
+
+//Mit Server verbinden und Datenbank auswaehlen
+$database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
+mysqli_select_db($database, "GambleDB");
+
+$result = $database -> query("select * from users where username = '$username'") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
+$row = $result->fetch_array();
+
+if(!empty($einsatz) && $einsatz > 0){
+  if($row['coins'] >= $einsatz){
+    $resultStr = "";
+    $wurfSumme = wurf();
+    $ersteSumme = $wurfSumme;
+      if($wurfSumme == 7 || $wurfSumme == 11){
+          gewonnen();
+      }else if($wurfSumme == 2 || $wurfSumme == 3 || $wurfSumme == 12){
+          verloren();
+      } else {
+          endSchleife();
+      }
+      
+      
+  } else {
+    $_SESSION['notification'] = ["error", "Du besitzt nicht genug Geld dafür."];
+  }
+} else {
+    $_SESSION['notification'] = ["error", "Bitte trage deinen Einsatz ein."];
+}
+
+$result = $database -> query("select * from users where username = '$username'") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
+$row = $result->fetch_array();
+setcookie("coins", $row["coins"], time()+3600, "/");
+
+header("location: LIVerdienen.php");
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
 } 
 catch(Error $e) {
     $trace = $e->getTrace();
