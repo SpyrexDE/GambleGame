@@ -13,7 +13,7 @@ $row = $result->fetch_array();
 
 if(!empty($einsatz) && $einsatz > 0){
   if($row['coins'] >= $einsatz){
-  
+      die("1 ");
     $resultStr = "";
     die("0 - " + $resultStr);
     $wurfSumme = wurf();
