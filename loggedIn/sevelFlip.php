@@ -15,9 +15,9 @@ if(!empty($einsatz) && $einsatz > 0){
   if($row['coins'] >= $einsatz){
     $resultStr = "";
     $wurfSumme = wurf();
-    $ersteSumme = $wurfSumme;die("f");
+    $ersteSumme = $wurfSumme;
       if($wurfSumme == 7 || $wurfSumme == 11){
-          gewonnen();
+          gewonnen();die("f");
       }else if($wurfSumme == 2 || $wurfSumme == 3 || $wurfSumme == 12){
           verloren();
       } else {
