@@ -52,7 +52,8 @@ function wurf(){
 }
 
 function gewonnen(){
-        global $gewonnen;
+        global $row['coins'];
+        global $einstatz;
         global $username;
         $gewonnen = $row['coins'] + $einsatz;
         $updstring = "UPDATE users SET coins='$gewonnen' WHERE username='$username'";
