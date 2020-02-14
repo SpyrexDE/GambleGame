@@ -17,7 +17,7 @@ if(!empty($einsatz) && $einsatz > 0){
     $wurfSumme = wurf();
     $ersteSumme = $wurfSumme;
       if($wurfSumme == 7 || $wurfSumme == 11){
-          gewonnen();die("f");
+          gewonnen();
       }else if($wurfSumme == 2 || $wurfSumme == 3 || $wurfSumme == 12){
           verloren();
       } else {
@@ -45,9 +45,9 @@ function wurf(){
     global $resultStr;
     $wurfZahl1 = rand(1, 6);
     $wurfZahl2 = rand(1, 6);
-    $wurfSumme = $wurfZahl1 + $wurfZahl2;
+    $wurfSumme = $wurfZahl1 + $wurfZahl2;die("f");
     $resultStr .= "Würfel1: " . $wurfZahl1 . ", Würfel2: " . $wurfZahl2 . " | Würfelsumme: " . $wurfSumme;
-    return $wurfSumme;
+    return $wurfSumme;die("z");
 }
 
 function gewonnen(){
