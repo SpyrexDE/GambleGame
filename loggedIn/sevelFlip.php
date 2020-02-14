@@ -31,7 +31,7 @@ if(!empty($einsatz) && $einsatz > 0){
 } else {
     $_SESSION['notification'] = ["error", "Bitte trage deinen Einsatz ein."];
 }
-
+die("1");
 $result = $database -> query("select * from users where username = '$username'") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
 $row = $result->fetch_array();
 setcookie("coins", $row["coins"], time()+3600, "/");
@@ -47,7 +47,7 @@ function wurf(){
     $wurfZahl2 = rand(1, 6);
     $wurfSumme = $wurfZahl1 + $wurfZahl2;
     $strToAdd = "Würfel1: $wurfZahl1, Würfel2: $wurfZahl2 | Würfelsumme: $wurfSumme";
-    $resultStr .= $strToAdd;die("3");
+    $resultStr .= $strToAdd;
     return $wurfSumme;
 }
 
