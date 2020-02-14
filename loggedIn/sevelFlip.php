@@ -52,7 +52,7 @@ function wurf(){
 }
 
 function gewonnen(){
-        global $row['coins'];
+        global $row;
         global $einsatz;
         global $username;
         $gewonnen = $row['coins'] + $einsatz;
