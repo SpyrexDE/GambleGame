@@ -337,22 +337,21 @@ input:focus {
 
 
 #changeImg{
-  color: #fff !important;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: #ed3330;
-  padding: 20px;
-  border-radius: 5px;
+  transition-duration: 0.2s;
+  height:80px;
+  width:300px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #f0b000;
   display: inline-block;
   border: none;
-  transition: all 0.4s ease 0s;
+  transform: scale(1, 1);
+  cursor: pointer;
+  margin-bottom: 5px;
+  font-size: 40px;
 }
 
 #changeImg:hover{
-  background: #434343;
-  letter-spacing: 1px;
-  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-  box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
-  transition: all 0.4s ease 0s;
+  transform: scale(1.1, 1.1);
 }
+
