@@ -55,7 +55,7 @@ if (isset($_SESSION['username'])){
               
           <div class="textbox">
               <p class="text">Neues Profilbild:</p>
-              <input type="file" name="userImg" placeholder="Photo" capture>
+              <input id="imgUpload" type="file" name="userImg" placeholder="Photo" capture>
           </div>
 
           <div class="textbox">

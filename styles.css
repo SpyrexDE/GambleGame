@@ -336,4 +336,8 @@ input:focus {
 /*NOTIFICATION STYLES*/
 
 
-
+#imgUpload{
+  padding: 0px;
+  background-color: #f0b000;
+  border-radius: 5px;
+}
