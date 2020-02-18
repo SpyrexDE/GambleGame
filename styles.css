@@ -336,7 +336,7 @@ input:focus {
 /*NOTIFICATION STYLES*/
 
 
-.imgChange{
+.changeImg{
   color: #fff !important;
   text-transform: uppercase;
   text-decoration: none;
@@ -348,7 +348,7 @@ input:focus {
   transition: all 0.4s ease 0s;
 }
 
-.imgChange:hover{
+.changeImg{
   background: #434343;
   letter-spacing: 1px;
   -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
