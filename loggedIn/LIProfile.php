@@ -54,7 +54,7 @@ if (isset($_SESSION['username'])){
 
           <?php echo "<label class='profileData'>"."Name: ".$_SESSION['username']."<br>"."<label>"."Geld: ".$_COOKIE['coins']."<br>"."<label>"."Registriert am: ".$_SESSION['registered']."</label>"."</label>"."</label>"; ?>
 
-          <div class="button_cont"><a id="changeImg" href=".">Profilbild ändern</a></div>
+          <div class="button_cont" align="center"><a id="changeImg" href=".">Profilbild ändern</a></div>
 
         </div>
 
