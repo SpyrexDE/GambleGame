@@ -49,14 +49,26 @@ if (isset($_SESSION['username'])){
 
         <div>
 
-        <div class="panel" style="height: 600px;">
-          <img class= "profileLogo" src="<?php echo $_SESSION['image'];?>" height="140" width="140" >
 
-          <?php echo "<label class='profileData'>"."Name: ".$_SESSION['username']."<br>"."<label>"."Geld: ".$_COOKIE['coins']."<br>"."<label>"."Registriert am: ".$_SESSION['registered']."</label>"."</label>"."</label>"; ?>
 
-          <div class="button_cont" align="center"><a style="color: deepskyblue;" href=".">Profil bearbeiten</a></div>
+          <div class="panel" style="height: 600px;">
+              
+          <div class="textbox">
+              <p class="text">Neues Profilbild:</p>
+              <input type="file" name="userImg" placeholder="Photo" capture>
+          </div>
 
-        </div>
+          <div class="textbox">
+              <p class="text">Neuer Name:</p>
+              <input type="text" name="user">
+          </div>
+
+          <div class="textbox">
+              <p class="text">Neues Passwort:</p>
+              <input type="password" name="pass">
+          </div>
+
+          </div>
 
 
 
