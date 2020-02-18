@@ -344,5 +344,15 @@ input:focus {
 }
 
 #saveBtn{
-  width: 210px;
+  transition-duration: 0.2s;
+  height:80px;
+  width:180px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #f0b000;
+  display: inline-block;
+  border: none;
+  transform: scale(1, 1);
+  cursor: pointer;
+  margin-bottom: 20px;
 }
