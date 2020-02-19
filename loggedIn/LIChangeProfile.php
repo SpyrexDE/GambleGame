@@ -27,7 +27,8 @@ if (isset($_SESSION['username'])){
 
       <div class="content">
 
-
+              $_SESSION['notification'] = ["success", "Es reicht ein Feld, um die Änderung zu speichern!"];
+          
                      <!--NOTIFICATION-LISTENER-->
 
                    <?php
@@ -51,7 +52,7 @@ if (isset($_SESSION['username'])){
 
 
 
-          <div class="panel" style="height: 600px;">
+          <div class="panel">
               
           <div class="textbox">
               <p class="text">Neues Profilbild:</p>
