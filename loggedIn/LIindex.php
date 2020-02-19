@@ -53,6 +53,7 @@ if (isset($_SESSION['username'])){
         <hr/>
            <h2 class= "subHeading">Letzte Updates</h2>
             <ul class = "text">
+                <li>Profile hinzugefügt</li>
                 <li>XSS gefixt</li>
                 <li>Cookie-Editing gefixt</li>
                 <li>Mobile Optimierungen</li>
