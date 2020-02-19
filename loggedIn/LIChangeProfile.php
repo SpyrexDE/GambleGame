@@ -51,25 +51,26 @@ if (isset($_SESSION['username'])){
 
                     ?>
               
+            <form action="registerProcess.php" method = "POST">
               
-              
-          <div class="textbox">
-              <p class="text">Neues Profilbild:</p>
-              <input id="imgUpload" type="file" name="userImg" placeholder="Photo" capture>
-          </div>
+                  <div class="textbox">
+                      <p class="text">Neues Profilbild:</p>
+                      <input id="imgUpload" type="file" name="userImg" placeholder="Photo" capture>
+                  </div>
 
-          <div class="textbox">
-              <p class="text">Neuer Name:</p>
-              <input type="text" name="user">
-          </div>
+                  <div class="textbox">
+                      <p class="text">Neuer Name:</p>
+                      <input type="text" name="user">
+                  </div>
 
-          <div class="textbox">
-              <p class="text">Neues Passwort:</p>
-              <input type="password" name="pass">
-          </div>
+                  <div class="textbox">
+                      <p class="text">Neues Passwort:</p>
+                      <input type="password" name="pass">
+                  </div>
 
-          <div class="centered"><Button id="saveBtn">Speichern</Button></div>
+                  <div class="centered"><Button id="saveBtn">Speichern</Button></div>
 
+            </form>
 
 
           </div>
