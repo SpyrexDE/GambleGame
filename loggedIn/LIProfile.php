@@ -52,8 +52,7 @@ if (isset($_SESSION['username'])){
         <div class="panel" style="height: 600px;">
             
                 <img class= "profileLogo" src="<?php echo $_SESSION['image'];?>" height="140" width="140" >
-                <?php echo "<label class='profileData' style='font-size: 20px !important;'>"."Name: ".$_SESSION['username']."<br>"."<label>"."Geld: ".$_COOKIE['coins']."<br>"."<label>"."Registriert am: ".$_SESSION['registered']."</label>"."</label>".                <div align="center"><a style="color: deepskyblue;" href="LIChangeProfile.php">Profil bearbeiten</a></div>
-."</label>"; ?>
+                <?php echo "<label class='profileData' style='font-size: 20px !important;'>"."Name: ".$_SESSION['username']."<br>"."<label>"."Geld: ".$_COOKIE['coins']."<br>"."<label>"."Registriert am: ".$_SESSION['registered']."</label>"."</label>"."<div align='center'><a style='color: deepskyblue;' href='LIChangeProfile.php'>Profil bearbeiten</a></div>"."</label>"; ?>
                 
 
           
