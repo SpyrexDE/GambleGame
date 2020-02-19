@@ -28,8 +28,11 @@ if (isset($_SESSION['username'])){
       <div class="content">
 
               <?php $_SESSION['notification'] = ["success", "Es reicht ein Feld, um die Änderung zu speichern!"]; ?>
-          
-                     <!--NOTIFICATION-LISTENER-->
+
+        <div>
+
+            
+                                 <!--NOTIFICATION-LISTENER-->
 
                    <?php
                    if (isset($_SESSION['notification'])){
@@ -45,11 +48,7 @@ if (isset($_SESSION['username'])){
                      }
 
                     ?>
-
-
-
-        <div>
-
+            
 
 
           <div class="panel">
