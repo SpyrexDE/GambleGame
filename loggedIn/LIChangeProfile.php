@@ -31,8 +31,10 @@ if (isset($_SESSION['username'])){
 
         <div>
 
-            
-                                 <!--NOTIFICATION-LISTENER-->
+          <div class="panel">
+              
+              
+                                               <!--NOTIFICATION-LISTENER-->
 
                    <?php
                    if (isset($_SESSION['notification'])){
@@ -48,10 +50,8 @@ if (isset($_SESSION['username'])){
                      }
 
                     ?>
-            
-
-
-          <div class="panel">
+              
+              
               
           <div class="textbox">
               <p class="text">Neues Profilbild:</p>
