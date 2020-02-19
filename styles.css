@@ -347,7 +347,7 @@ input:focus {
 #saveBtn{
   transition-duration: 0.2s;
   height:80px;
-  width:180px;
+  width:250px;
   box-sizing: border-box;
   border-radius: 10px;
   background-color: #f0b000;
