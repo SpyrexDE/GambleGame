@@ -342,12 +342,13 @@ input:focus {
   background-color: #f0b000;
   border-radius: 5px;
   color: white;
+  font-size: 20px !important;
 }
 
 #saveBtn{
   transition-duration: 0.2s;
-  height:80px;
-  width:250px;
+  height: 80px;
+  width: 250px;
   box-sizing: border-box;
   border-radius: 10px;
   background-color: #f0b000;
