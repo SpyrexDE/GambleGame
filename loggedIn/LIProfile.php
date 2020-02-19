@@ -49,7 +49,7 @@ if (isset($_SESSION['username'])){
 
         <div>
 
-        <div class="panel">
+        <div class="panel" style="width=800">
             
                 <img class= "profileLogo" src="<?php echo $_SESSION['image'];?>" height="140" width="140" >
                 <?php echo "<label class='profileData' style='font-size: 20px !important;'>"."Name: ".$_SESSION['username']."<br>"."<label>"."Geld: ".$_COOKIE['coins']."<br>"."<label>"."Registriert am: ".$_SESSION['registered']."</label>"."</label>"."<div align='center'><a style='color: deepskyblue;' href='LIChangeProfile.php'>Profil bearbeiten</a></div>"."</label>"; ?>
