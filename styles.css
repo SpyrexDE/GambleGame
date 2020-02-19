@@ -206,6 +206,7 @@ input:focus {
   top: 0;
   position: fixed;
   text-align: center;
+  z-index: 100;
 }
 
 .header .logo{
