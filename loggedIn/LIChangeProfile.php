@@ -27,7 +27,7 @@ if (isset($_SESSION['username'])){
 
       <div class="content">
 
-              $_SESSION['notification'] = ["success", "Es reicht ein Feld, um die Änderung zu speichern!"];
+              <?php $_SESSION['notification'] = ["success", "Es reicht ein Feld, um die Änderung zu speichern!"]; ?>
           
                      <!--NOTIFICATION-LISTENER-->
 
