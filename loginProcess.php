@@ -40,7 +40,7 @@
               try{
 
               //Reset MaxCoins
-                die("asd");
+                
               if(darfKlicken()){
                   $database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
                   $database -> query("UPDATE users SET dailyCoins='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
@@ -53,7 +53,7 @@
                 mysqli_select_db($database, "GambleDB");
                 $lastUpdateDate = $database -> query("select lastClick from users where username='$username'") or die ("Fehler: ".mysqli_error($database));
                       $lastUpdateDate = mysqli_fetch_array($lastUpdateDate)[0];
-          
+                      die("asd");
                 if($lastUpdateDate < $actualDate->modify('-3 minute')->format('Y-m-d H:i:s')){
                   return true;
                 } else{
