@@ -46,7 +46,7 @@
                   $database -> query("UPDATE users SET dailyCoins='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
               }
               
-
+              die("asd");
               function darfKlicken(){//Checkt, ob schon 3 minuten her ist wo die reg zahl wieder zurück auf 0 gesetzt wurde
                 die("--");
                 $actualDate = new DateTime();
