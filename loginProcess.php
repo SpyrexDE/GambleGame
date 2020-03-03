@@ -63,7 +63,7 @@
               }
 
             }catch(Excention $e){
-              die($e->getMessage());
+              echo $e->getMessage();
             }
 
 
