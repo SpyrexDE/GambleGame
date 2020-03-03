@@ -63,11 +63,11 @@
               }
 
             }catch(Excention $e){
-              echo $e->getMessage();
+              die("jo");
             }
 
 
-            die("jo");
+            
 
             $_SESSION['notification'] = ["success", "Erfolgreich eingeloggt."];
               header("location: loggedIn/LIindex.php");
