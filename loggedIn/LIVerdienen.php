@@ -68,7 +68,7 @@ if (isset($_SESSION['username'])){
                 }
 
               function addCoins(value){
-                if(getCookie('dailyCoins') >= 50){
+                if(getCookie('dailyCoins') >= 33){
                   document.getElementById("btnClicker").disabled = true;
                   return;
                 }
