@@ -54,7 +54,7 @@
                 $lastUpdateDate = $database -> query("select lastClick from users where username='$username'") or die ("Fehler: ".mysqli_error($database));
                       $lastUpdateDate = mysqli_fetch_array($lastUpdateDate)[0];
           
-                if($lastUpdateDate < $actualDate->modify('-3 minute')->format('Y-m-d H:i:s')){
+                if(date('Y-m-d H:i:s', $lastUpdateDate) < date('Y-m-d H:i:s', $actualDate->modify('-3 minute')){
                   return true;
                 } else{
                   return false;
