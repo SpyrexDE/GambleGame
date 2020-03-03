@@ -48,6 +48,7 @@
               
 
               function darfKlicken(){//Checkt, ob schon 3 minuten her ist wo die reg zahl wieder zurück auf 0 gesetzt wurde
+                die("--");
                 $actualDate = new DateTime();
                 $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
                 mysqli_select_db($database, "GambleDB");
