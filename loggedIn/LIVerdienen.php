@@ -95,7 +95,8 @@ if (isset($_SESSION['username'])){
               window.onload = function () {
                   refresh();
                   if(getCookie('dailyCoins') >= 33){
-                    document.getElementById("btnClicker").disabled = true;
+                    document.getElementById('btnClicker').disabled = true;
+                    document.getElementById('btnClicker').setAttribute('title', 'Es können nur alle 3 Minuten Coins geklickt werden!');
                     return;
                   }
               }
