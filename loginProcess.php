@@ -39,17 +39,28 @@
               
               
 
-              //Reset DailyMaxCoins
+              //Reset MaxCoins
 
-              $actualDate = new DateTime();
-              $actualDate = $actualDate->format('Y-m-d');
-
-              if(strval($oldDay) == strval($today)){
+              if(darfKlicken()){
                   $database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
                   $database -> query("UPDATE users SET dailyCoins='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
               }
               
 
+              function darfKlicken(){//Checkt, ob schon 3 minuten her ist wo die reg zahl wieder zurück auf 0 gesetzt wurde
+                $actualDate = new DateTime();
+                $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
+                mysqli_select_db($database, "GambleDB");
+                $lastUpdateDate = $database -> query("select lastClick from users where username='$username'") or die ("Fehler: ".mysqli_error($database));
+                      $lastUpdateDate = mysqli_fetch_array($lastUpdateDate)[0];
+          
+                if($lastUpdateDate < $actualDate->modify('-3 minute')->format('Y-m-d H:i:s')){
+                  return true;
+                } else{
+                  return false;
+                }
+          
+              }
 
 
 

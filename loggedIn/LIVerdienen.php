@@ -87,14 +87,14 @@ if (isset($_SESSION['username'])){
                   var currency = "Geld: ";
                   var dailyCoins = getCookie('dailyCoins');
                   var coinStr = coins;
-                  document.getElementById('labelDailyCoins').innerHTML = dailyCoins.concat("/50");
+                  document.getElementById('labelDailyCoins').innerHTML = dailyCoins.concat("/33");
                   document.getElementById('labelCoins').innerHTML = currency.concat(coinStr);
               }
 
 
               window.onload = function () {
                   refresh();
-                  if(getCookie('dailyCoins') >= 50){
+                  if(getCookie('dailyCoins') >= 33){
                     document.getElementById("btnClicker").disabled = true;
                     return;
                   }
@@ -106,7 +106,7 @@ if (isset($_SESSION['username'])){
 
               <input onclick="addCoins(1); sendClick();" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\>
               <br>
-              <label class="maxCoinsLabel" id="labelDailyCoins">0/50</label>
+              <label class="maxCoinsLabel" id="labelDailyCoins">0/33</label>
 
           </div>
 
