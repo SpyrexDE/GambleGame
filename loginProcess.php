@@ -1,5 +1,5 @@
 <?php session_start();
-die("ahhh!!!!!");
+
     if(!empty( $_POST['user']) &&  !empty($_POST['pass'])){
 
         //Lade Werte des form-elemtes in die Variablen
@@ -31,7 +31,8 @@ die("ahhh!!!!!");
               } else {
                 $_SESSION["image"] = "../img/logo.jpg";
               }
-
+              
+die("ahhh!!!!!");
               setcookie("coins", $row["coins"]);
               setcookie("dailyCoins", $row['dailyCoins']);
               setcookie("lastClick", $row['lastClick']);
