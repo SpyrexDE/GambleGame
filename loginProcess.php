@@ -36,7 +36,7 @@
               setcookie("dailyCoins", $row['dailyCoins']);
               setcookie("lastClick", $row['lastClick']);
 
-              die ("arg");
+              
               
 
               //Reset MaxCoins
