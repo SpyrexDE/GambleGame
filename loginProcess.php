@@ -40,7 +40,7 @@
               
 
               //Reset MaxCoins
-                
+                die("-");
               if(darfKlicken()){
                   $database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
                   $database -> query("UPDATE users SET dailyCoins='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
