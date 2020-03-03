@@ -36,7 +36,7 @@
               setcookie("dailyCoins", $row['dailyCoins']);
               setcookie("lastClick", $row['lastClick']);
 
-              die("jo");
+              
               try{
 
               //Reset MaxCoins
@@ -67,7 +67,7 @@
             }
 
 
-
+            die("jo");
 
             $_SESSION['notification'] = ["success", "Erfolgreich eingeloggt."];
               header("location: loggedIn/LIindex.php");
