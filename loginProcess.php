@@ -31,14 +31,13 @@
               } else {
                 $_SESSION["image"] = "../img/logo.jpg";
               }
-              
-die("ahhh!!!!!");
+              try{
               setcookie("coins", $row["coins"]);
               setcookie("dailyCoins", $row['dailyCoins']);
               setcookie("lastClick", $row['lastClick']);
 
               die ("arg");
-              try{
+              
 
               //Reset MaxCoins
                 
