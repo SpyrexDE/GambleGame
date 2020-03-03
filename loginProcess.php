@@ -53,7 +53,7 @@
                 mysqli_select_db($database, "GambleDB");
                 $lastUpdateDate = $database -> query("select lastClick from users where username='$username'") or die ("Fehler: ".mysqli_error($database));
                       $lastUpdateDate = mysqli_fetch_array($lastUpdateDate)[0];
-                die(str($lastUpdateDate)+"---" + str($actualDate));
+                die(str($lastUpdateDate)+"---";
                 if($lastUpdateDate->format('Y-m-d H:i:s') < $actualDate->modify('-3 minute')->format('Y-m-d H:i:s')){
                   return true;
                 } else{
