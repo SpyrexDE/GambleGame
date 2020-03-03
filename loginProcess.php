@@ -18,7 +18,7 @@
 
 
         //Suche nach Nutzer in der Datenbank
-        $result = $database -> query("select * from users where username = '$username' and password= '$password'")
+        $result = $database -> query("select * from users where username = '$username' and password = '$password'")
                       or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
         $row = $result->fetch_array();
           if ($row['username'] == $username && $row['password'] == $password ){
@@ -37,7 +37,7 @@
               setcookie("lastClick", $row['lastClick']);
 
               
-              
+              try{
 
               //Reset MaxCoins
 
@@ -62,7 +62,9 @@
           
               }
 
-
+            }catch(Excention $e){
+              die($e->getMessage());
+            }
 
 
 
