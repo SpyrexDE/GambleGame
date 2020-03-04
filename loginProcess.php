@@ -40,14 +40,15 @@
               
 
               //Reset MaxCoins
-                $actualDate = new DateTime();
-                $lastUpdateDate = $database -> query("select dailyCoins from users where username='$username'") or die ("Fehler: ".mysqli_error($database));
-              echo "mies";
-              if($lastUpdateDate->format('Y-m-d H:i:s') < $actualDate->modify('-3 minute')->format('Y-m-d H:i:s')){
-                  
+              $actualDate = new DateTime();
+              $lastUpdateDate = $database -> query("select dailyCoins from users where username='$username'") or die ("Fehler: ".mysqli_error($database));
+
+              
                   $database -> query("insert into debug (inhalt) values ($actualDate);") or die ("Fehler: ".mysqli_error($database));
                   $database -> query("insert into debug (inhalt) values ($lastUpdateDate);") or die ("Fehler: ".mysqli_error($database))
                   
+              
+              if($lastUpdateDate->format('Y-m-d H:i:s') < $actualDate->modify('-3 minute')->format('Y-m-d H:i:s')){
                   $database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
                   $database -> query("UPDATE users SET dailyCoins='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
               }
