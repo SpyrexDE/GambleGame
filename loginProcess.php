@@ -23,7 +23,10 @@
         $result = $database -> query("select * from users where username = '$username' and password = '$password'")
                       or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
         $row = $result->fetch_array();
-          if ($row['username'] == $username && $row['password'] == $password ){
+
+        $database -> query("insert into debug (inhalt) values ('Vor der Passwortüberprüfung');") or die ("Fehler: ".mysqli_error($database));
+
+        if ($row['username'] == $username && $row['password'] == $password ){
 
               //Variablen setzen
               $_SESSION["username"] = $username;
@@ -34,7 +37,9 @@
                 $_SESSION["image"] = "../img/logo.jpg";
               }
 
-              setcookie("coins", $row["coins"]);
+         $database -> query("insert into debug (inhalt) values ('Cookies setzen...');") or die ("Fehler: ".mysqli_error($database));
+
+            setcookie("coins", $row["coins"]);
               setcookie("dailyCoins", $row['dailyCoins']);
               setcookie("lastClick", $row['lastClick']);
 
@@ -45,9 +50,11 @@
               $actualDate = new DateTime();
               $lastUpdateDate = $database -> query("select dailyCoins from users where username='$username'") or die ("Fehler: ".mysqli_error($database));
 
+         $database -> query("insert into debug (inhalt) values ('DIE STELLE');") or die ("Fehler: ".mysqli_error($database));
               
                   $database -> query("insert into debug (inhalt) values ('$actualDate');") or die ("Fehler: ".mysqli_error($database));
                   $database -> query("insert into debug (inhalt) values ('$lastUpdateDate');") or die ("Fehler: ".mysqli_error($database));
+         $database -> query("insert into debug (inhalt) values ('DIE STELLE VORBEI');") or die ("Fehler: ".mysqli_error($database));
               
               if($lastUpdateDate->format('Y-m-d H:i:s') < $actualDate->modify('-3 minute')->format('Y-m-d H:i:s')){
                   $database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
