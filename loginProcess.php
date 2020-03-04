@@ -43,7 +43,7 @@
               $actualDate = new DateTime();
               $lastUpdateDate = $database -> query("select dailyCoins from users where username='$username'") or die ("Fehler: ".mysqli_error($database));
 
-              
+              die("hilfe");
                   $database -> query("insert into debug (inhalt) values ($actualDate);") or die ("Fehler: ".mysqli_error($database));
                   $database -> query("insert into debug (inhalt) values ($lastUpdateDate);") or die ("Fehler: ".mysqli_error($database));
                   
