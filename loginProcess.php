@@ -38,12 +38,11 @@
 
              function darfKlicken(){    //Checkt, ob schon 3 minuten her ist wo die reg zahl wieder zurück auf 0 gesetzt wurde
                 global $username;
+                global $database;
                 $actualDate = new DateTime();
-                $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
                 mysqli_select_db($database, "GambleDB");
                 $lastUpdateDate = $database -> query("select dailyCoins from users where username='$username'") or die ("Fehler: ".mysqli_error($database));
                 //$lastUpdateDate = mysqli_fetch_array($lastUpdateDate)[0];
-                 die("Test");
                 die(str($lastUpdateDate) + str($actualDate));
                 if($lastUpdateDate->format('Y-m-d H:i:s') < $actualDate->modify('-3 minute')->format('Y-m-d H:i:s')){
                   return true;
