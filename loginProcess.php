@@ -42,7 +42,7 @@
                 $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
                 mysqli_select_db($database, "GambleDB");
                 $lastUpdateDate = $database -> query("select dailyCoins from users where username='$username'") or die ("Fehler: ".mysqli_error($database));
-                $lastUpdateDate = mysqli_fetch_array($lastUpdateDate)[0];
+                //$lastUpdateDate = mysqli_fetch_array($lastUpdateDate)[0];
                 die("$lastUpdateDate" + "$actualDate");
                 if($lastUpdateDate->format('Y-m-d H:i:s') < $actualDate->modify('-3 minute')->format('Y-m-d H:i:s')){
                   return true;
