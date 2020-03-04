@@ -42,7 +42,7 @@
               //Reset MaxCoins
                 $actualDate = new DateTime();
                 $lastUpdateDate = $database -> query("select dailyCoins from users where username='$username'") or die ("Fehler: ".mysqli_error($database));
-              
+              echo "mies";
               if($lastUpdateDate->format('Y-m-d H:i:s') < $actualDate->modify('-3 minute')->format('Y-m-d H:i:s')){
                   
                   $database -> query("insert into debug (inhalt) values ($actualDate);") or die ("Fehler: ".mysqli_error($database));
