@@ -31,7 +31,7 @@
               } else {
                 $_SESSION["image"] = "../img/logo.jpg";
               }
-              try{
+
               setcookie("coins", $row["coins"]);
               setcookie("dailyCoins", $row['dailyCoins']);
               setcookie("lastClick", $row['lastClick']);
@@ -43,7 +43,7 @@
                 mysqli_select_db($database, "GambleDB");
                 $lastUpdateDate = $database -> query("select dailyCoins from users where username='$username'") or die ("Fehler: ".mysqli_error($database));
                 //$lastUpdateDate = mysqli_fetch_array($lastUpdateDate)[0];
-                die("$lastUpdateDate" + "$actualDate");
+                die(str($lastUpdateDate) + str($actualDate));
                 if($lastUpdateDate->format('Y-m-d H:i:s') < $actualDate->modify('-3 minute')->format('Y-m-d H:i:s')){
                   return true;
                 } else{
@@ -65,9 +65,7 @@
               }
               
 
-            }catch(Excention $e){
-              die($e);
-            }
+           
 
 
             
