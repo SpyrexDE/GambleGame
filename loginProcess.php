@@ -40,7 +40,6 @@
                 global $username;
                 global $database;
                 $actualDate = new DateTime();
-                mysqli_select_db($database, "GambleDB");
                 $lastUpdateDate = $database -> query("select dailyCoins from users where username='$username'") or die ("Fehler: ".mysqli_error($database));
                 //$lastUpdateDate = mysqli_fetch_array($lastUpdateDate)[0];
                 die(str($lastUpdateDate) + str($actualDate));
