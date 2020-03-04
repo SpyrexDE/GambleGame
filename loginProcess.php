@@ -52,9 +52,9 @@
 
          $database -> query("insert into debug (inhalt) values ('DIE STELLE');") or die ("Fehler: ".mysqli_error($database));
               
-                  $database -> query("insert into debug (inhalt) values ('$actualDate');") or die ("Fehler: ".mysqli_error($database));
-         $database -> query("insert into debug (inhalt) values ('DIE STELLE 2');") or die ("Fehler: ".mysqli_error($database));
                   $database -> query("insert into debug (inhalt) values ('$lastUpdateDate');") or die ("Fehler: ".mysqli_error($database));
+         $database -> query("insert into debug (inhalt) values ('DIE STELLE 2');") or die ("Fehler: ".mysqli_error($database));
+                  $database -> query("insert into debug (inhalt) values ('$actualDate');") or die ("Fehler: ".mysqli_error($database));
          $database -> query("insert into debug (inhalt) values ('DIE STELLE VORBEI');") or die ("Fehler: ".mysqli_error($database));
               
               if($lastUpdateDate->format('Y-m-d H:i:s') < $actualDate->modify('-3 minute')->format('Y-m-d H:i:s')){
