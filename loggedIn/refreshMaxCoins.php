@@ -4,12 +4,7 @@
 $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
 mysqli_select_db($database, "GambleDB");
 
-//Suche nach Nutzer in der Datenbank
-$result = $database -> query("select * from users where username = '$username' and password = '$password'")
-              or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
-$row = $result->fetch_array();
-
-$username = $row['username'];
+$_SESSION["username"] = $username;
 
 
 
