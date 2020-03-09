@@ -11,9 +11,11 @@ $_SESSION["username"] = $username;
 //Reset MaxCoins
 $actualDate = date('Y-m-d H:i:s', time());
 //$actualMinus3 = $actualDate->modify('-3 minute');
-$lastUpdateDate = $database -> query("select * from users where username='$username'") or die ("Fehler: ".mysqli_error($database));
-$lastUpdateDate = $lastUpdateDate->fetch_array();
-die($lastUpdateDate["lastClick"]);
+$result = $database -> query("select * from users where username = '$username'")
+              or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
+$row = $result->fetch_array();
+$lastUpdateDate = $row['lastClick'];
+die($lastUpdateDate);
         $database -> query("insert into debug (inhalt) values ('$actualDate');") or die ("Fehler: ".mysqli_error($database));
         $database -> query("insert into debug (inhalt) values ('$lastUpdateDate');") or die ("Fehler: ".mysqli_error($database));
 //        $database -> query("insert into debug (inhalt) values ('$actualMinus3');") or die ("Fehler: ".mysqli_error($database));
