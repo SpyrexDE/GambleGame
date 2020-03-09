@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['username'])){
-include "loggedIn\refreshMaxCoins.php";
+include "refreshMaxCoins.php";
 ?>
 <html>
 <head>
