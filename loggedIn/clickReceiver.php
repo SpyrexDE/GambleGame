@@ -25,7 +25,7 @@ if($row['dailyCoins'] < 33){
     $database -> query("UPDATE users SET dailyCoins='$dailyCoins' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
     }
 }else{
-    $_SESSION['notification'] = ["error", "Du hast heute bereits 50 mal geklickt!"];
+    $_SESSION['notification'] = ["error", "Du hast heute bereits 33 mal geklickt!"];
     header("location: LIVerdienen.php");
 }
 
