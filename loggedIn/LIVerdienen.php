@@ -1,6 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['username'])){
+include "loggedIn/refreshMaxCoins.php";
 ?>
 <html>
 <head>
@@ -140,9 +141,9 @@ if (isset($_SESSION['username'])){
                   <input type="submit" class ="btnClicker" id="btnCoinFlip" value="[Flip]"/>
               </form>
          </div>
-            
+
             <hr>
-            
+
           <div class="section">
               <h1>SevenEleven</h1>
               <p class = "text">Das bekannte SevenEleven-Glücksspiel!</p>
@@ -152,9 +153,9 @@ if (isset($_SESSION['username'])){
                 </p>
                   <input type="submit" class ="btnClicker" id="btnCoinFlip" value="[Würfeln]"/>
               </form>
-         </div>            
-            
-            
+         </div>
+
+
         <center>
       </div>
     </body>

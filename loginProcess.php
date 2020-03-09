@@ -34,31 +34,14 @@
                 $_SESSION["image"] = "../img/logo.jpg";
               }
 
+              //include "loggedIn/refreshMaxCoins.php"; SPÄTER WIEDER ENTKOMMENTIEREN!!!! <<<<<____WICHTIG_____>>>>
+
 
             setcookie("coins", $row["coins"]);
               setcookie("dailyCoins", $row['dailyCoins']);
               setcookie("lastClick", $row['lastClick']);
 
 
-              
-
-              //Reset MaxCoins
-              $actualDate = date('Y-m-d H:i:s', time());
-              $lastUpdateDate = $database -> query("select lastClick from users where username='$username'") or die ("Fehler: ".mysqli_error($database));
-              $lastUpdateDate = mysqli_fetch_array($lastUpdateDate)[0];
-                      $database -> query("insert into debug (inhalt) values ('$actualDate');") or die ("Fehler: ".mysqli_error($database));
-                      $database -> query("insert into debug (inhalt) values ('$lastUpdateDate');") or die ("Fehler: ".mysqli_error($database));
-              
-              if($lastUpdateDate < $actualDate->modify('-3 minute')){
-                  $database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
-                  $database -> query("UPDATE users SET dailyCoins='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
-              }
-              
-
-           
-
-
-            
 
             $_SESSION['notification'] = ["success", "Erfolgreich eingeloggt."];
               header("location: loggedIn/LIindex.php");
