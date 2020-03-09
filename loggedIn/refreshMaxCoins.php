@@ -11,10 +11,11 @@ $row = $result->fetch_array();
 
 $username = $row['username'];
 
-$actualMinus3 = $actualDate->modify('-3 minute');
+
 
 //Reset MaxCoins
 $actualDate = date('Y-m-d H:i:s', time());
+$actualMinus3 = $actualDate->modify('-3 minute');
 $lastUpdateDate = $database -> query("select lastClick from users where username='$username'") or die ("Fehler: ".mysqli_error($database));
 $lastUpdateDate = mysqli_fetch_array($lastUpdateDate)[0];
         $database -> query("insert into debug (inhalt) values ('$actualDate');") or die ("Fehler: ".mysqli_error($database));
