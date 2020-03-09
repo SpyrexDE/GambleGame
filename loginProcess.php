@@ -34,7 +34,7 @@
                 $_SESSION["image"] = "../img/logo.jpg";
               }
 
-              //include "loggedIn/refreshMaxCoins.php"; SPÄTER WIEDER ENTKOMMENTIEREN!!!! <<<<<____WICHTIG_____>>>>
+              include "loggedIn/refreshMaxCoins.php";
 
 
             setcookie("coins", $row["coins"]);
