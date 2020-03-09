@@ -17,7 +17,7 @@ $username = $row['username'];
 $actualDate = date('Y-m-d H:i:s', time());
 //$actualMinus3 = $actualDate->modify('-3 minute');
 $lastUpdateDate = $database -> query("select lastClick from users where username='$username'") or die ("Fehler: ".mysqli_error($database));
-$lastUpdateDate = mysqli_fetch_array($lastUpdateDate)[0];
+$lastUpdateDate = fetch_array($lastUpdateDate)[0];
         $database -> query("insert into debug (inhalt) values ('$actualDate');") or die ("Fehler: ".mysqli_error($database));
         $database -> query("insert into debug (inhalt) values ('$lastUpdateDate');") or die ("Fehler: ".mysqli_error($database));
 //        $database -> query("insert into debug (inhalt) values ('$actualMinus3');") or die ("Fehler: ".mysqli_error($database));
