@@ -15,7 +15,7 @@ $result = $database -> query("select * from users where username = '$username'")
               or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
 $row = $result->fetch_array();
 $lastUpdateDate = $row['lastClick'];
-die($lastUpdateDate);
+die($row);
         $database -> query("insert into debug (inhalt) values ('$actualDate');") or die ("Fehler: ".mysqli_error($database));
         $database -> query("insert into debug (inhalt) values ('$lastUpdateDate');") or die ("Fehler: ".mysqli_error($database));
 //        $database -> query("insert into debug (inhalt) values ('$actualMinus3');") or die ("Fehler: ".mysqli_error($database));
