@@ -110,6 +110,51 @@ include "refreshMaxCoins.php";
               <br>
               <label class="maxCoinsLabel" id="labelDailyCoins">0/33</label>
 
+
+<?php
+$actualMinus3 = date('Y-m-d H:i:s', strtotime('-3 minutes'));
+if($_COOKIE["lastClick"] > $actualMinus3){
+
+?>
+<!--TIMER-->
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date(getCookie("lastClick")).setMinutes( countDownDate.getMinutes() + 3 ).getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("timerLabel").innerHTML = minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    location.reload();
+  }
+}, 1000);
+</script>
+
+
+
+
+
+  <label class='maxCoinsLabel' id='timerLabel'></label>
+
+
+<?php
+}
+?>
+
           </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
