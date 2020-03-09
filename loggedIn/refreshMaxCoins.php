@@ -24,6 +24,12 @@ if($lastUpdateDate < $actualMinus3){
     $database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
     $database -> query("UPDATE users SET dailyCoins='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
     setcookie("dailyCoins", 0, time()+3600, "/");
+    //Update lastClickCookie
+    $result = $database -> query("select * from users where username = '$username'")
+                  or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
+    $row = $result->fetch_array();
+    setcookie("lastClick", $row['lastClick']);
+
     $_SESSION['notification'] = ["success", "Deine 3-minute-Coins wurden resettet!"];
 }
 ?>
