@@ -43,7 +43,7 @@ if (!empty($_POST['user'])){
                   }
                 //----
                 $_SESSION['notification'] = ["success", "Erfolgreich registriert."];
-                header("location: Register.php");
+                header("location: Login.php");
             } else {
               $_SESSION['notification'] = ["error", "Der Benutzername ist bereits vergeben."];
               header("location: Register.php");
@@ -54,7 +54,7 @@ if (!empty($_POST['user'])){
 
     } else {
               $_SESSION['notification'] = ["error", "Ungültige Eingaben."];
-              header("location: Login.php");
+              header("location: Register.php");
     }
 }
 
