@@ -37,7 +37,7 @@
               include "loggedIn/refreshMaxCoins.php";
 
 
-            setcookie("coins", $row["coins"]);
+              setcookie("coins", $row["coins"]);
               setcookie("dailyCoins", $row['dailyCoins']);
               setcookie("lastClick", $row['lastClick']);
 

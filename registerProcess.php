@@ -54,7 +54,7 @@ if (!empty($_POST['user'])){
 
     } else {
               $_SESSION['notification'] = ["error", "Ungültige Eingaben."];
-              header("location: Register.php");
+              header("location: Login.php");
     }
 }
 
