@@ -123,7 +123,7 @@ $result = $database -> query("select * from users where username = '$username'")
 $row = $result->fetch_array();
 $lastUpdateDate = $row['lastClick'];
 
-if($lastUpdateDate > $actualMinus3){
+if($lastUpdateDate < $actualMinus3){
 
 ?>
 <!--TIMER-->
