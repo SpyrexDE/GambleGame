@@ -126,6 +126,9 @@ $lastUpdateDate = $row['lastClick'];
 //if($lastUpdateDate < $actualMinus3){
 
 ?>
+
+<label class='maxCoinsLabel' id='timerLabel'></label>
+
 <!--TIMER-->
 <script>
 // Setze coundown date
@@ -153,12 +156,6 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
-
-
-
-
-
-  <label class='maxCoinsLabel' id='timerLabel'></label>
 
 
 <?php
