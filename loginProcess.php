@@ -41,7 +41,9 @@
               setcookie("dailyCoins", $row['dailyCoins']);
               setcookie("lastClick", $row['lastClick']);
 
-
+              $actualDate = date('Y-m-d H:i:s', time());
+              $message = "Der Nutzer ".$username."hat sich am ".$actualDate." eingeloggt.";
+              $database -> query("insert into debug (inhalt) values ('$message');") or die ("Fehler: ".mysqli_error($database));
 
             $_SESSION['notification'] = ["success", "Erfolgreich eingeloggt."];
               header("location: loggedIn/LIindex.php");

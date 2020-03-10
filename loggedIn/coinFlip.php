@@ -18,11 +18,18 @@ if(!empty($einsatz) && $einsatz > 0){
         $gewonnen = $row['coins'] + $einsatz;
         $database -> query("UPDATE users SET coins='$gewonnen' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
         $_SESSION['notification'] = ["success", "Du hast beim Coinflip gewonnen!"];
+        $ergebnis = "gewonnen";
       }else {
         $verloren = $row['coins'] - $einsatz;
         $database -> query("UPDATE users SET coins='$verloren' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
         $_SESSION['notification'] = ["error", "Du hast beim Coinflip verloren!"];
+        $ergebnis = "verloren";
       }
+
+      $actualDate = date('Y-m-d H:i:s', time());
+      $message = "Der Nutzer ".$username."hat am beim Coinflip am".$actualDate." ".$ergebnis.".";
+      $database -> query("insert into debug (inhalt) values ('$message');") or die ("Fehler: ".mysqli_error($database));
+
   } else {
     $_SESSION['notification'] = ["error", "Du besitzt nicht genug Geld dafür."];
   }

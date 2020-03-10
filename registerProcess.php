@@ -42,6 +42,12 @@ if (!empty($_POST['user'])){
                     $database -> query("INSERT INTO iplist (IP, lastRegister) VALUES ('$seineIP', '$actualDate')");  //Erstelle neue IP-Row
                   }
                 //----
+
+                $actualDate = date('Y-m-d H:i:s', time());
+                $message = "Der Nutzer ".$username."hat sich am ".$actualDate." registriert.";
+                $database -> query("insert into debug (inhalt) values ('$message');") or die ("Fehler: ".mysqli_error($database));
+
+
                 $_SESSION['notification'] = ["success", "Erfolgreich registriert."];
                 header("location: Login.php");
             } else {

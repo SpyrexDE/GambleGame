@@ -14,9 +14,7 @@ $actualMinus3 = date('Y-m-d H:i:s', strtotime('-3 minutes'));
 $result = $database -> query("select * from users where username = '$username'")
               or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
 $row = $result->fetch_array();
-$message = "Der Nutzer ".$username."hat sich am ".$row['lastClick']."eingeloggt.";
 
-        $database -> query("insert into debug (inhalt) values ('$message');") or die ("Fehler: ".mysqli_error($database));
 
 if($lastUpdateDate < $actualMinus3){
     $database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
