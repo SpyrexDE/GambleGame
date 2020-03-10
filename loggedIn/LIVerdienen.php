@@ -112,10 +112,10 @@ include "refreshMaxCoins.php";
 
 
 <?php
+$actualDate = date('Y-m-d H:i:s', time());
 $actualMinus3 = date('Y-m-d H:i:s', strtotime('-3 minutes'));
-$input = $_COOKIE["lastClick"]; 
-$lastClickDate = strtotime($input);
-if($lastClickDate < $actualMinus3){
+$lastUpdateDate = $_COOKIE['lastClick'];
+if($lastUpdateDate < $actualMinus3){
 
 ?>
 <!--TIMER-->
