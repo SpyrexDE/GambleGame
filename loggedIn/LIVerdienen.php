@@ -128,25 +128,25 @@ $lastUpdateDate = $row['lastClick'];
 ?>
 <!--TIMER-->
 <script>
-// Set the date we're counting down to
+// Setze coundown date
 var countDownDate = new Date(getCookie("lastClick")).setMinutes( countDownDate.getMinutes() + 3 ).getTime();
 
-// Update the count down every 1 second
+// countdown date updaten
 var x = setInterval(function() {
 
-  // Get today's date and time
+  // Jetziges Datum getten
   var now = new Date().getTime();
 
-  // Find the distance between now and the count down date
+  // Distanzberechnung
   var distance = countDownDate - now;
 
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Display the result in the element with id="demo"
+  // Setze ergebnis in das Label ein
   document.getElementById("timerLabel").innerHTML = "Reset in: "minutes + "m " + seconds + "s ";
 
-  // If the count down is finished, write some text
+  // Wenn Countdown vorbei: reloade page
   if (distance < 0) {
     clearInterval(x);
     location.reload();
