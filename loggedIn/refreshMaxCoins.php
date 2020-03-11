@@ -24,7 +24,10 @@ if($lastUpdateDate < $actualMinus3){
     $result = $database -> query("select * from users where username = '$username'")
                   or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
     $row = $result->fetch_array();
-    setcookie("lastClick", $actualDate, time()+3600, "/");
+  
+  $cookieDate = str($actualDate).str_replace(":", "-");
+    setcookie("lastClick", $cookieDate, time()+3600, "/");
+  
 
     $_SESSION['notification'] = ["success", "Deine 3-minute-Coins wurden resettet!"];
 }
