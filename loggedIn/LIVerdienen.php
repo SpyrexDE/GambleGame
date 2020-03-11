@@ -131,6 +131,8 @@ $lastUpdateDate = $row['lastClick'];
 
 <!--TIMER-->
 <script>
+    document.getElementById("timerLabel").innerHTML = getCookie("lastClick");
+    
 // Setze coundown date
 var countDownDate = new Date(getCookie("lastClick")).setMinutes( countDownDate.getMinutes() + 3 ).getTime();
 
