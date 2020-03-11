@@ -16,9 +16,8 @@ $result = $database -> query("select * from users where username = '$username'")
 $row = $result->fetch_array();
 $lastUpdateDate = $row['lastClick'];
 
-$actualDateFormatted = $actualDate->format('Y-m-d H:i:s');
 if($lastUpdateDate < $actualMinus3){
-    $database -> query("UPDATE users SET lastClick='$actualDateFormatted' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
+    $database -> query("UPDATE users SET lastClick=FROM_UNIXTIME('$actualDate') WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
     $database -> query("UPDATE users SET dailyCoins='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
     setcookie("dailyCoins", 0, time()+3600, "/");
     //Update lastClickCookie
