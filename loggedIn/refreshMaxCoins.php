@@ -9,7 +9,7 @@ $username = $_SESSION["username"];
 
 
 //Reset MaxCoins
-$actualDate = date('Y-m-d H:i:s', time());
+$actualDate = date('Y-m-d H-i-s', time());
 $actualMinus3 = date('Y-m-d H:i:s', strtotime('-3 minutes'));
 $result = $database -> query("select * from users where username = '$username'")
               or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
