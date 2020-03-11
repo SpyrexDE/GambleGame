@@ -25,8 +25,8 @@ if($lastUpdateDate < $actualMinus3){
                   or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
     $row = $result->fetch_array();
   
-  $cookieDate = $actualDate.str_replace(":", "-");
-    setcookie("lastClick", $cookieDate, time()+3600, "/");
+  $cookieDate = $actualDate;
+    setcookie("lastClick", $actualDate, time()+3600, "/");
   
 
     $_SESSION['notification'] = ["success", "Deine 3-minute-Coins wurden resettet!"];
