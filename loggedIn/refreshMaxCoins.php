@@ -25,7 +25,7 @@ if($lastUpdateDate < $actualMinus3){
                   or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
     $row = $result->fetch_array();
   
-  $cookieDate = str($actualDate).str_replace(":", "-");
+  $cookieDate = $actualDate.str_replace(":", "-");
     setcookie("lastClick", $cookieDate, time()+3600, "/");
   
 
