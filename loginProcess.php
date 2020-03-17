@@ -39,7 +39,6 @@
 
               setcookie("coins", $row["coins"]);
               setcookie("dailyCoins", $row['dailyCoins']);
-              setcookie("lastClick", $row['lastClick']);
 
               $actualDate = date('Y-m-d H:i:s', time());
               $message = "Der Nutzer ".$username." hat sich am ".$actualDate." eingeloggt.";
