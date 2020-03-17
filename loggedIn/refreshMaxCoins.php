@@ -6,7 +6,7 @@ mysqli_select_db($database, "GambleDB");
 
 $username = $_SESSION["username"];
 
-
+die("geht net");
 
 //Reset MaxCoins
 $actualDate = time(); // date('Y-m-d H-i-s', time());
