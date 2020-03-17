@@ -6,7 +6,6 @@ mysqli_select_db($database, "GambleDB");
 
 $username = $_SESSION["username"];
 
-die("geht net");
 
 //Reset MaxCoins
 $actualDate = time(); // date('Y-m-d H-i-s', time());
@@ -30,5 +29,7 @@ if($lastUpdateDate < $actualMinus3){
   
 
     $_SESSION['notification'] = ["success", "Deine 3-minute-Coins wurden resettet!"];
+} else {
+    setcookie("lastClick", $lastUpdateDate, time()+3600, "/");
 }
 ?>
