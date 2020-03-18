@@ -18,7 +18,7 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])){
         $newfilename = $username . '.' . end($temp);
         move_uploaded_file($image["tmp_name"], "../img/userIMGS/" . $newfilename);
         }
-        
+
           //Mit Server verbinden und Datenbank auswaehlen
           $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
           mysqli_select_db($database, "GambleDB");
@@ -33,7 +33,7 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])){
           $result = $database -> query("select * from users where username = '$username'")
                                  or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error($database));
 
-            if (mysqli_num_rows($result) <= 0){  //Falls name noch nicht existiert:
+            if (mysqli_num_rows($result) <= 0 || $username == $oldName){  //Falls name noch nicht existiert:
                 //BEI ERFOLGREICHEM REGISTRIEREN:
                 //Setze user in die datenbank
 
