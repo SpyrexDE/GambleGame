@@ -28,7 +28,7 @@ if($lastUpdateDate < $actualMinus2){
     setcookie("lastClick", $actualDate, time()+3600, "/");
   
 
-    $_SESSION['notification'] = ["success", "Deine 3-minute-Coins wurden resettet!"];
+    $_SESSION['notification'] = ["success", "Deine 2-minute-Coins wurden resettet!"];
 } else {
     setcookie("lastClick", $lastUpdateDate, time()+3600, "/");
 }
