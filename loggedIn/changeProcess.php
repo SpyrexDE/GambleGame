@@ -19,9 +19,9 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])){
           $newfilename = $username . ".jpg";
           move_uploaded_file($image["tmp_name"], "../img/userIMGS/" . $newfilename);
           } else{
-                      die(print_r($image));
                 $_SESSION['notification'] = ["error", "Das Jpg muss 300x300 Pixel groß sein."];
                 header("location: LIChangeProfile.php");
+                break;
           }
       }
 
