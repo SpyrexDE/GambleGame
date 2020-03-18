@@ -16,7 +16,7 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])){
 
         $temp = explode(".", $image["name"]);
         $newfilename = $username . '.' . end($temp);
-        move_uploaded_file($image, "../img/userIMGS/" . $newfilename);
+        move_uploaded_file($image["name"], "../img/userIMGS/" . $newfilename);
 
           //Mit Server verbinden und Datenbank auswaehlen
           $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
