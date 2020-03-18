@@ -16,7 +16,7 @@ $lastUpdateDate = mysqli_fetch_array($lastUpdateDate)[0];
 
 
 
-if($row['dailyCoins'] < 33){
+if($row['dailyCoins'] < 22){
     if($click == true){
 
     $coins = $row['coins'] + 1;
