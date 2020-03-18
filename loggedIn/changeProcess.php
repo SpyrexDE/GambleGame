@@ -14,9 +14,9 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])){
     if(ctype_alnum($username) && strlen( $username) >= 4 && strlen( $username) <= 10 && strlen( $password) >= 4 && strlen( $password) <= 20){
 
       if(is_uploaded_file($image["tmp_name"])){
-                  die(print_r($image));
           //Check upload
           if(!$image["size"] > 300000 && getimagesize($image["tmp_name"])[0] == 300 && getimagesize($image["tmp_name"])[1] == 300 && exif_imagetype($image["tmp_name"]) != IMAGETYPE_JPEG){
+                      die(print_r($image));
           $newfilename = $username . ".jpg";
           move_uploaded_file($image["tmp_name"], "../img/userIMGS/" . $newfilename);
           } else{
