@@ -22,6 +22,7 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])){
                 $_SESSION['notification'] = ["error", "Das Jpg muss 300x300 Pixel groß sein."];
                 header("location: LIChangeProfile.php");
           }
+          die(print_r($image));
       }
 
           //Mit Server verbinden und Datenbank auswaehlen
