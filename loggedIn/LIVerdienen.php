@@ -95,9 +95,9 @@ include "refreshMaxCoins.php";
 
               window.onload = function () {
                   refresh();
-                  if(getCookie('dailyCoins') >= 21){
+                  if(getCookie('dailyCoins') >= 22){
                     document.getElementById('btnClicker').disabled = true;
-                    document.getElementById('btnClicker').setAttribute('title', 'Es können nur alle 3 Minuten Coins geklickt werden!');
+                    document.getElementById('btnClicker').setAttribute('title', 'Es können nur alle 2 Minuten Coins geklickt werden!');
                     return;
                   }
               }
@@ -108,7 +108,7 @@ include "refreshMaxCoins.php";
 
               <input onclick="addCoins(1); sendClick();" type="button" class ="btnClicker" id="btnClicker" value="[Klicken]"\>
               <br>
-              <label class="maxCoinsLabel" id="labelDailyCoins">0/33</label>
+              <label class="maxCoinsLabel" id="labelDailyCoins">0/22</label>
 
 
 <?php
@@ -117,13 +117,13 @@ $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@
 mysqli_select_db($database, "GambleDB");
 
 $actualDate = date('Y-m-d H:i:s', time());
-$actualMinus3 = date('Y-m-d H:i:s', strtotime('-3 minutes'));
+$actualMinus2 = date('Y-m-d H:i:s', strtotime('-2 minutes'));
 $result = $database -> query("select * from users where username = '$username'")
               or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
 $row = $result->fetch_array();
 $lastUpdateDate = $row['lastClick'];
 
-//if($lastUpdateDate < $actualMinus3){
+//if($lastUpdateDate < $actualMinus2){
 
 ?>
 
