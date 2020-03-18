@@ -9,13 +9,13 @@ $username = $_SESSION["username"];
 
 //Reset MaxCoins
 $actualDate = time(); // date('Y-m-d H-i-s', time());
-$actualMinus3 = time() - 3*60;
+$actualMinus2 = time() - 2*60;
 $result = $database -> query("select * from users where username = '$username'")
               or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
 $row = $result->fetch_array();
 $lastUpdateDate = $row['lastClick'];
 
-if($lastUpdateDate < $actualMinus3){
+if($lastUpdateDate < $actualMinus2){
     $database -> query("UPDATE users SET lastClick='$actualDate' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
     $database -> query("UPDATE users SET dailyCoins='0' WHERE username='$username'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
     setcookie("dailyCoins", 0, time()+3600, "/");
