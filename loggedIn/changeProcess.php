@@ -18,6 +18,10 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])){
         $newfilename = $username . '.' . end($temp);
         move_uploaded_file($image["tmp_name"], "../img/userIMGS/" . $newfilename);
         }
+        //Check for rename
+        if(file_exists('../img/userIMGS/'.$oldName.'.jpg')){
+          rename ('../img/userIMGS/'.$oldName.'.jpg', '../img/userIMGS/'.$username.'.jpg');
+        }
 
           //Mit Server verbinden und Datenbank auswaehlen
           $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
