@@ -13,11 +13,12 @@ if(!isset($_SESSION))
 if (!empty($_POST['user']) && !empty($_POST['pass'])){
     if(ctype_alnum($username) && strlen( $username) >= 4 && strlen( $username) <= 10 && strlen( $password) >= 4 && strlen( $password) <= 20){
       if($image["size"] > 300000 || getimagesize($image)[0] != 300 || getimagesize($image)[1] != 300){
-
+        if(is_uploaded_file($image)){
         $temp = explode(".", $image["name"]);
         $newfilename = $username . '.' . end($temp);
         move_uploaded_file($image["tmp_name"], "../img/userIMGS/" . $newfilename);
-
+        }
+        
           //Mit Server verbinden und Datenbank auswaehlen
           $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
           mysqli_select_db($database, "GambleDB");
