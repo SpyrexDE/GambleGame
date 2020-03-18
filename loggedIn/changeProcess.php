@@ -10,7 +10,7 @@ if(!isset($_SESSION))
           $image = $_FILES['userImg'];
           $oldName = $_SESSION['username'];
 
-if (!empty($_POST['user']) && !empty($_POST['pass']) && !empty($_POST['userImg'])){
+if (!empty($_POST['user']) && !empty($_POST['pass']) && !empty($_FILES['userImg'])){
     if(ctype_alnum($username) && strlen( $username) >= 4 && strlen( $username) <= 10 && strlen( $password) >= 4 && strlen( $password) <= 20){
       if($image["size"] > 300000 || getimagesize($image)[0] != 300 || getimagesize($image)[1] != 300){
 
