@@ -15,7 +15,7 @@ if (isset($_SESSION['username'])){
         <div class="header">
 
                   <a href="LIProfile.php">
-                    <img class= "logo selected" src="<?php echo $_SESSION['image'];?>" height="100" width="100" >
+                    <img class= "logo selected" src="<?php echo $_SESSION['image'].'?='.filemtime($filename);?>" height="100" width="100" >
                   </a>
                   <?php echo "<label class='quickData'>"."Name: ".$_SESSION['username']."<br>"."<label id='labelCoins'>"."Geld: ".$_COOKIE['coins']."</label>"."</label>"; ?>
               <a class="menuButton" href="LIindex.php">Start</a>
