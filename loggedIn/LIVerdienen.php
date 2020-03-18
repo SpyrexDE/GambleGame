@@ -95,7 +95,7 @@ include "refreshMaxCoins.php";
 
               window.onload = function () {
                   refresh();
-                  if(getCookie('dailyCoins') >= 33){
+                  if(getCookie('dailyCoins') >= 32){
                     document.getElementById('btnClicker').disabled = true;
                     document.getElementById('btnClicker').setAttribute('title', 'Es können nur alle 3 Minuten Coins geklickt werden!');
                     return;
