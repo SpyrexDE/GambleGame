@@ -95,7 +95,7 @@ include "refreshMaxCoins.php";
 
               window.onload = function () {
                   refresh();
-                  if(getCookie('dailyCoins') >= 21){
+                  if(getCookie('dailyCoins') >= 22){
                     document.getElementById('btnClicker').disabled = true;
                     document.getElementById('btnClicker').setAttribute('title', 'Es können nur alle 2 Minuten Coins geklickt werden!');
                     return;
