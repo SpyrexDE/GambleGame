@@ -18,6 +18,7 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])){
           if(!$image["size"] > 300000 && getimagesize($image["tmp_name"])[0] == 300 && getimagesize($image["tmp_name"])[1] == 300 && exif_imagetype($image["tmp_name"]) != IMAGETYPE_JPEG){
           $newfilename = $username . ".jpg";
           move_uploaded_file($image["tmp_name"], "../img/userIMGS/" . $newfilename);
+          die($image);
           } else{
                 $_SESSION['notification'] = ["error", "Das Jpg muss 300x300 Pixel groß sein."];
                 header("location: LIChangeProfile.php");
