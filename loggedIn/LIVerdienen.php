@@ -88,7 +88,7 @@ include "refreshMaxCoins.php";
                   var currency = "Geld: ";
                   var dailyCoins = getCookie('dailyCoins');
                   var coinStr = coins;
-                  document.getElementById('labelDailyCoins').innerHTML = dailyCoins.concat("/33");
+                  document.getElementById('labelDailyCoins').innerHTML = dailyCoins.concat("/22");
                   document.getElementById('labelCoins').innerHTML = currency.concat(coinStr);
               }
 
