@@ -27,7 +27,7 @@ if (isset($_SESSION['username'])){
 
       <div class="content">
 
-              <?php $_SESSION['notification'] = ["warning", "Du musst alle Felder ausfüllen, um die Daten zu ändern!"]; ?>
+              <?php $_SESSION['notification'] = ["warning", "Du musst alle Textfelder ausfüllen, um die Daten zu ändern!"]; ?>
 
         <div>
 
