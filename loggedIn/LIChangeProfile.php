@@ -51,7 +51,7 @@ if (isset($_SESSION['username'])){
 
                     ?>
 
-            <form action="changeProcess.php" method = "POST">
+            <form action="changeProcess.php" method = "POST" enctype="multipart/form-data">
 
                   <div class="textbox">
                       <p class="text">Neues Profilbild:</p>
