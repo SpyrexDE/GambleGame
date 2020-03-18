@@ -15,9 +15,8 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])){
 
       if(is_uploaded_file($image)){
           //Check upload
-          if(!$image["size"] > 300000 && getimagesize($image["tmp_name"])[0] == 300 && getimagesize($image["tmp_name"])[1] == 300 && exif_imagetype($image["tmp_name"]) != IMAGETYPE_GIF){
-          $temp = explode(".", $image["name"]);
-          $newfilename = $username . '.' . end($temp);
+          if(!$image["size"] > 300000 && getimagesize($image["tmp_name"])[0] == 300 && getimagesize($image["tmp_name"])[1] == 300 && exif_imagetype($image["tmp_name"]) != IMAGETYPE_JPEG){
+          $newfilename = $username . ".jpg";
           move_uploaded_file($image["tmp_name"], "../img/userIMGS/" . $newfilename);
           } else{
                 $_SESSION['notification'] = ["error", "Das Jpg muss 300x300 Pixel groß sein."];
