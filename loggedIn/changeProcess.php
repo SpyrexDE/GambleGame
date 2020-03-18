@@ -21,7 +21,6 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])){
         //Check for rename
         if(file_exists('../img/userIMGS/'.$oldName.'.jpg')){
           rename ('../img/userIMGS/'.$oldName.'.jpg', '../img/userIMGS/'.$username.'.jpg');
-          die("Dein bild wurde umbenannt...");
         }
 
           //Mit Server verbinden und Datenbank auswaehlen
