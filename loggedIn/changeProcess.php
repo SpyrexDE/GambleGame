@@ -15,11 +15,11 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])){
 
       if(is_uploaded_file($image["tmp_name"])){
           //Check upload
-          if(!$image["size"] > 300000 && getimagesize($image["tmp_name"])[0] == 300 && getimagesize($image["tmp_name"])[1] == 300 && exif_imagetype($image["tmp_name"]) != IMAGETYPE_JPEG){
+          if($image["size"] < 300000 && getimagesize($image["tmp_name"])[0] == 300 && getimagesize($image["tmp_name"])[1] == 300 && exif_imagetype($image["tmp_name"]) != IMAGETYPE_JPEG){
           $newfilename = $username . ".jpg";
           move_uploaded_file($image["tmp_name"], "../img/userIMGS/" . $newfilename);
           } else{
-                die("Es tut uns leid aber leider können wir aus Sicherheitsgründen nur Bilddateien mit der Endung '.png' akzeptieren. Diese dürfen auch nur 300x300 pixel groß sein. Wir bitten um ihr verständnis.");
+                die("Es tut uns leid aber leider können wir aus Sicherheitsgründen nur Bilddateien mit der Endung '.jpg' akzeptieren. Diese dürfen auch nur 300x300 pixel groß sein. Wir bitten um ihr verständnis.".print_r(getimagesize($image["tmp_name"])).exif_imagetype($image["tmp_name"]));
           }
       }
 
