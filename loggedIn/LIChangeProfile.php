@@ -27,13 +27,13 @@ if (isset($_SESSION['username'])){
 
       <div class="content">
 
-              <?php $_SESSION['notification'] = ["success", "Es reicht ein Feld, um die Änderung zu speichern!"]; ?>
+              <?php $_SESSION['notification'] = ["warning", "Du musst alle Felder ausfüllen, um die Daten zu ändern!"]; ?>
 
         <div>
 
           <div class="panel">
-              
-              
+
+
                                                <!--NOTIFICATION-LISTENER-->
 
                    <?php
@@ -50,9 +50,9 @@ if (isset($_SESSION['username'])){
                      }
 
                     ?>
-              
-            <form action="registerProcess.php" method = "POST">
-              
+
+            <form action="changeProcess.php" method = "POST">
+
                   <div class="textbox">
                       <p class="text">Neues Profilbild:</p>
                       <input id="imgUpload" type="file" name="userImg" placeholder="Photo" capture>
