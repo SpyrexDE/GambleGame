@@ -53,6 +53,8 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])){
                   rename ('../img/userIMGS/'.$oldName.'.jpg', '../img/userIMGS/'.$username.'.jpg');
                 }
 
+                session_destroy();
+                session_start();
                 $_SESSION['notification'] = ["success", "Alle Änderungen wurden übernommen!"];
                 header("location:  LIChangeProfile.php");
             } else {
