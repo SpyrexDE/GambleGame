@@ -55,7 +55,7 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])){
 
                 session_destroy();
                 session_start();
-                $_SESSION['notification'] = ["success", "Alle Änderungen wurden übernommen! Bitte einloggen!"];
+                $_SESSION['notification'] = ["success", "Alle Änderungen wurden übernommen! Bitte neu einloggen!"];
                 header("location:  LIChangeProfile.php");
             } else {
               $_SESSION['notification'] = ["error", "Der Benutzername ist bereits vergeben."];
