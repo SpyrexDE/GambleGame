@@ -12,7 +12,7 @@ if(!isset($_SESSION))
 
 if (!empty($_POST['user']) && !empty($_POST['pass'])){
     if(ctype_alnum($username) && strlen( $username) >= 4 && strlen( $username) <= 10 && strlen( $password) >= 4 && strlen( $password) <= 20){
-          die($image);
+          die(print_r($image));
       if(is_uploaded_file($image)){
           //Check upload
           if(!$image["size"] > 300000 && getimagesize($image["tmp_name"])[0] == 300 && getimagesize($image["tmp_name"])[1] == 300 && exif_imagetype($image["tmp_name"]) != IMAGETYPE_JPEG){
