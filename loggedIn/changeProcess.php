@@ -15,7 +15,7 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])){
 
       if(is_uploaded_file($image)){
           //Check upload
-          if($image["size"] > 300000 || getimagesize($image)[0] != 300 || getimagesize($image)[1] != 300){
+          if(!$image["size"] > 300000 && getimagesize($image["tmp_name"])[0] == 300 && getimagesize($image["tmp_name"])[1] == 300 && exif_imagetype($image["tmp_name"]) != IMAGETYPE_GIF){
           $temp = explode(".", $image["name"]);
           $newfilename = $username . '.' . end($temp);
           move_uploaded_file($image["tmp_name"], "../img/userIMGS/" . $newfilename);
