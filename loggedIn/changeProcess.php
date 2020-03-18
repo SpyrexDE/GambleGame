@@ -19,8 +19,7 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])){
           $newfilename = $username . ".jpg";
           move_uploaded_file($image["tmp_name"], "../img/userIMGS/" . $newfilename);
           } else{
-                $_SESSION['notification'] = ["error", "Das Jpg muss 300x300 Pixel groß sein."];
-                header("location: LIChangeProfile.php");
+                die("Es tut uns leid aber leider können wir aus Sicherheitsgründen nur Bilddateien mit der Endung '.png' akzeptieren. Diese dürfen auch nur 300x300 pixel groß sein. Wir bitten um ihr verständnis.");
           }
       }
 
