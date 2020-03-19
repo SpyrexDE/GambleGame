@@ -37,7 +37,21 @@ if(isset($_SESSION["username"])){
                                        <input type="password" name="pass">
                                    </div>
 
-                                   <center><div class="g-recaptcha" data-sitekey="6LfxZ-IUAAAAAO-KrvRN6CCw9YH12kA9CCRzqMXL"></div></center>
+
+                                   <script>
+                                   var onloadCallback = function() {
+                                     grecaptcha.render('captcha', {
+                                       'theme' : 'dark'
+                                     });
+                                   };
+                                   </script>
+
+
+
+                                   <center><div class="g-recaptcha" data-sitekey="6LfxZ-IUAAAAAO-KrvRN6CCw9YH12kA9CCRzqMXL" id="captcha"></div></center>
+
+
+
 
                                    <div class="centered"><Button class="loginBtn">Login</Button></div>
                                    </form>
