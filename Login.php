@@ -48,7 +48,7 @@ var onloadCallback = function() {
                                        <input type="password" name="pass">
                                    </div>
 
-                                   <center><div class="g-recaptcha" data-sitekey="6LfxZ-IUAAAAAO-KrvRN6CCw9YH12kA9CCRzqMXL" id="captcha"></div></center>
+                                   <center><div class="g-recaptcha" data-sitekey="6LfxZ-IUAAAAAO-KrvRN6CCw9YH12kA9CCRzqMXL" id="captcha" data-theme="dark"></div></center>
 
                                    <div class="centered"><Button class="loginBtn">Login</Button></div>
                                    </form>
