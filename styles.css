@@ -1,5 +1,4 @@
 body {
-  height: 100%;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
     background-color: #101010;
@@ -12,7 +11,7 @@ body {
   padding: 1rem;
   background-color: #0D0D0D;
   text-align: center;
-  position: absolute;
+  position: fixed;
 }
 .footerLink{
   color: white;
