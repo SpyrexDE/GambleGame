@@ -10,8 +10,12 @@ if(isset($_SESSION["username"])){
 
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script>
-grecaptcha.render('captcha', {
-  'theme' : 'dark'
+var onloadCallback = function() {
+  grecaptcha.render('captcha', {
+    'sitekey' : '6LfxZ-IUAAAAAO-KrvRN6CCw9YH12kA9CCRzqMXL',
+    'theme' : 'dark'
+  });
+};
 });
 </script>
 
