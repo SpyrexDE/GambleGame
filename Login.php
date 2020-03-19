@@ -10,9 +10,9 @@ if(isset($_SESSION["username"])){
 
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script>
-  var RecaptchaOptions = {
-      theme : 'dark'
-  };
+grecaptcha.render('captcha', {
+  'theme' : 'dark'
+});
 </script>
 
 <title>__________OEG-2100_____________</title>
