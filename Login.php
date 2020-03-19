@@ -36,16 +36,7 @@ if(isset($_SESSION["username"])){
                                        <input type="password" name="pass">
                                    </div>
 
-                                   <input type="hidden" name="token" id="token">
-                                   <script src="https://www.google.com/recaptcha/api.js?render=6LclmcAUAAAAAD7KggGm1Cf10O0MwosbTOvfaaTT"></script>
-                                   <script>
-                                   grecaptcha.ready(function() {
-                                       grecaptcha.execute('_reCAPTCHA_site_key_', {action: 'homepage'}).then(function(token) {
-                                          document.getElementById('token').value = token;
-                                       });
-                                   });
-                                   </script>
-
+                                   <div class="g-recaptcha" data-sitekey="6LfxZ-IUAAAAAO-KrvRN6CCw9YH12kA9CCRzqMXL"></div>
 
                                    <div class="centered"><Button class="loginBtn">Login</Button></div>
                                    </form>

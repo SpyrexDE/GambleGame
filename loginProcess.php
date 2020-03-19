@@ -1,6 +1,6 @@
 <?php session_start();
     if(!empty( $_POST['user']) &&  !empty($_POST['pass'])){
-      $request = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LclmcAUAAAAAAHqM1eTN-jUXrhUvd5hlziLsn3Y&response=".$_POST["token"]);
+      $request = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LfxZ-IUAAAAADCw6cFyh7C_zqhvgjQnmIrKj-cw&response=".$_POST["token"]);
         $request = json_decode($request);
         if($request->success == true){
             if($request->score >= 0.6){
