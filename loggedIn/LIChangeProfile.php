@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['username'])){
-  include "LIkicker";
+include "LIkicker.php";
 ?>
 <html>
 <head>

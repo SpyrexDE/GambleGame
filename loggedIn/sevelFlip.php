@@ -11,12 +11,12 @@ mysqli_select_db($database, "GambleDB");
 $result = $database -> query("select * from users where username = '$username'") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
 $row = $result->fetch_array();
 
-  
-  
-  
-  
-  
-    
+
+
+
+
+
+
   function wurf(){
     global $resultStr;
     $wurfZahl1 = rand(1, 6);
@@ -60,19 +60,19 @@ function endSchleife(){
           } else{
               endSchleife();
           }
-          
+
 }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
 if(!empty($einsatz) && $einsatz > 0){
   if($row['coins'] >= $einsatz){
     $resultStr = "";
@@ -85,8 +85,8 @@ if(!empty($einsatz) && $einsatz > 0){
       } else {
           endSchleife();
       }
-      
-      
+
+
   } else {
     $_SESSION['notification'] = ["error", "Du besitzt nicht genug Geld dafür."];
   }

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['username'])){
-  include "LIkicker";
+include "LIkicker.php";
 
   //Mit Server verbinden und Datenbank auswaehlen
   $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
