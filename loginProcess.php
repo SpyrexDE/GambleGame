@@ -61,7 +61,7 @@
            header("location: Login.php");
          }
        } else{
-         $_SESSION['notification'] = ["warning", "Bitte fülle das recaptcha aus!"];
+         $_SESSION['notification'] = ["warning", "Das recaptcha war Fehlerhaft!"];
          header("location: Login.php");
        }
 
