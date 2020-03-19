@@ -187,6 +187,10 @@ hr{
     color: white;
 }
 
+a{
+  color: white;
+}
+
 .panel{
     max-width: 500px;
     margin-left: auto;
