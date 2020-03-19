@@ -1,6 +1,7 @@
 <?php session_start();
+die($_POST['token']);
     if(!empty( $_POST['user']) &&  !empty($_POST['pass'])){
-      $request = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LfxZ-IUAAAAADCw6cFyh7C_zqhvgjQnmIrKj-cw&response=".$_POST["token"]);
+      $request = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LfxZ-IUAAAAADCw6cFyh7C_zqhvgjQnmIrKj-cw&response=".$_POST['token']);
         $request = json_decode($request);
         if($request->success == true){
             if($request->score >= 0.6){
@@ -61,7 +62,7 @@
            header("location: Login.php");
          }
        } else{
-         $_SESSION['notification'] = ["warning", "Das recaptcha war Fehlerhaft!"];
+         $_SESSION['notification'] = ["warning", "Das recaptcha muss bestätigt werden!"];
          header("location: Login.php");
        }
 
