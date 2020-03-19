@@ -1,6 +1,11 @@
 <?php session_start();
-
+die($_POST["token"]);
     if(!empty( $_POST['user']) &&  !empty($_POST['pass'])){
+      $request = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6Leee8cUAAAAAN5-5PnLypW26GewUeqnlld2mbIA&response=".$_POST["token"]);
+        $request = json_decode($request);
+        if($request->success == true){
+            if($request->score >= 0.6){
+
 
         //Lade Werte des form-elemtes in die Variablen
         $username = $_POST['user'];
@@ -50,6 +55,17 @@
             $_SESSION['notification'] = ["error", "Falscher Benutzername oder Passwort."];
             header("location: Login.php");
           }
+
+
+         } else{
+           $_SESSION['notification'] = ["warning", "Dein Score beim recaptcha war zu niedrig!"];
+           header("location: Login.php");
+         }
+       } else{
+         $_SESSION['notification'] = ["warning", "Bitte fülle das recaptcha aus!"];
+         header("location: Login.php");
+       }
+
 
     } else{
       $_SESSION['notification'] = ["warning", "Du musst beide Felder ausgefüllt haben!"];
