@@ -7,7 +7,14 @@ if(isset($_SESSION["username"])){
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
 <link rel="shortcut icon" type="image/x-icon" href="img/logo.jpg" />
+
 <script src='https://www.google.com/recaptcha/api.js'></script>
+<script>
+  var RecaptchaOptions = {
+      theme : 'theme_name'
+  };
+</script>
+
 <title>__________OEG-2100_____________</title>
 </head>
     <body>
@@ -37,21 +44,7 @@ if(isset($_SESSION["username"])){
                                        <input type="password" name="pass">
                                    </div>
 
-
-                                   <script>
-                                   var onloadCallback = function() {
-                                     grecaptcha.render('captcha', {
-                                       'theme' : 'dark'
-                                     });
-                                   };
-                                   </script>
-
-
-
                                    <center><div class="g-recaptcha" data-sitekey="6LfxZ-IUAAAAAO-KrvRN6CCw9YH12kA9CCRzqMXL" id="captcha"></div></center>
-
-
-
 
                                    <div class="centered"><Button class="loginBtn">Login</Button></div>
                                    </form>
