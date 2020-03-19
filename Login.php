@@ -11,7 +11,7 @@ if(isset($_SESSION["username"])){
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script>
   var RecaptchaOptions = {
-      theme : 'theme_name'
+      theme : 'dark'
   };
 </script>
 
