@@ -9,15 +9,6 @@ if(isset($_SESSION["username"])){
 <link rel="shortcut icon" type="image/x-icon" href="img/logo.jpg" />
 
 <script src='https://www.google.com/recaptcha/api.js'></script>
-<script>
-var onloadCallback = function() {
-  grecaptcha.render('captcha', {
-    'sitekey' : '6LfxZ-IUAAAAAO-KrvRN6CCw9YH12kA9CCRzqMXL',
-    'theme' : 'dark'
-  });
-};
-});
-</script>
 
 <title>__________OEG-2100_____________</title>
 </head>
