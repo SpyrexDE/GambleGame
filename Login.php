@@ -37,7 +37,7 @@ if(isset($_SESSION["username"])){
                                        <input type="password" name="pass">
                                    </div>
 
-                                   <div class="g-recaptcha" data-sitekey="6LfxZ-IUAAAAAO-KrvRN6CCw9YH12kA9CCRzqMXL"></div>
+                                   <center><div class="g-recaptcha" data-sitekey="6LfxZ-IUAAAAAO-KrvRN6CCw9YH12kA9CCRzqMXL"></div></center>
 
                                    <div class="centered"><Button class="loginBtn">Login</Button></div>
                                    </form>
