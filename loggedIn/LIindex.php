@@ -62,7 +62,7 @@ include "LIkicker";
                 <li>Neue Datenbankverbindung</li>
                 <li>Kleinere bugfixes</li>
                 <li>Coinflip hinzugefügt</li>
-                <li><?php echo $_SESSION["lastLogin"];?></li>
+                <li><?php echo time()-$_SESSION["lastLogin"];?></li>
             </ul>
         </div>
       </div>
