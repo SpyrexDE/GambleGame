@@ -1,15 +1,13 @@
 <?php
 session_start();
-
-//Mit Server verbinden und Datenbank auswaehlen
-$database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
-mysqli_select_db($database, "GambleDB");
-
-$result = $database -> query("SELECT * FROM users ORDER BY coins DESC LIMIT 10") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
-
-
-
 if (isset($_SESSION['username'])){
+  include "LIkicker";
+
+  //Mit Server verbinden und Datenbank auswaehlen
+  $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
+  mysqli_select_db($database, "GambleDB");
+
+  $result = $database -> query("SELECT * FROM users ORDER BY coins DESC LIMIT 10") or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error());
 ?>
 <html>
 <head>

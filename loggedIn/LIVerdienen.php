@@ -1,6 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['username'])){
+include "LIkicker";
 include "refreshMaxCoins.php";
 ?>
 <html>
