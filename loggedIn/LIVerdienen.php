@@ -215,10 +215,10 @@ var x = setInterval(function() {
       </div>
 
       <div class="footer">
-        <a class="footerLink" href="impressum.html">Impressum</a>
-        <a class="footerLink" href="datenschutz.html">Datenschutz</a>
+        <a class="footerLink" href="../impressum.html">Impressum</a>
+        <a class="footerLink" href="../datenschutz.html">Datenschutz</a>
       </div>
-      
+
     </body>
 </html>
 
