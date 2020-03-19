@@ -13,16 +13,6 @@ if (isset($_SESSION['username'])){
   if (!empty($_POST['user']) && !empty($_POST['pass'])){
       if(ctype_alnum($username) && strlen( $username) >= 4 && strlen( $username) <= 10 && strlen( $password) >= 4 && strlen( $password) <= 20){
 
-        if(is_uploaded_file($image["tmp_name"])){
-            //Check upload
-            if($image["size"] < 300000 && getimagesize($image["tmp_name"])[0] == 300 && getimagesize($image["tmp_name"])[1] == 300 && exif_imagetype($image["tmp_name"]) == IMAGETYPE_JPEG){
-            $newfilename = $username . ".jpg";
-            move_uploaded_file($image["tmp_name"], "../img/userIMGS/" . $newfilename);
-            } else{
-                  die("Es tut uns leid aber leider können wir aus Sicherheitsgründen nur Bilddateien mit der Endung '.jpg' akzeptieren. Diese dürfen auch nur 300x300 pixel groß sein. Wir bitten um ihr verständnis.");
-            }
-        }
-
             //Mit Server verbinden und Datenbank auswaehlen
             $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
             mysqli_select_db($database, "GambleDB");
@@ -38,7 +28,17 @@ if (isset($_SESSION['username'])){
                                    or die("Fehler beim durchsuchen der Datenbank: ".mysqli_error($database));
 
               if (mysqli_num_rows($result) <= 0 || $username == $oldName){  //Falls name noch nicht existiert:
-                  //BEI ERFOLGREICHEM REGISTRIEREN:
+
+                if(is_uploaded_file($image["tmp_name"])){
+                    //Check upload
+                    if($image["size"] < 300000 && getimagesize($image["tmp_name"])[0] == 300 && getimagesize($image["tmp_name"])[1] == 300 && exif_imagetype($image["tmp_name"]) == IMAGETYPE_JPEG){
+                    $newfilename = $username . ".jpg";
+                    move_uploaded_file($image["tmp_name"], "../img/userIMGS/" . $newfilename);
+                    } else{
+                          die("Es tut uns leid aber leider können wir aus Sicherheitsgründen nur Bilddateien mit der Endung '.jpg' akzeptieren. Diese dürfen auch nur 300x300 pixel groß sein. Wir bitten um ihr verständnis.");
+                    }
+                }
+                
                   //Setze user in die datenbank
 
                   $database -> query("UPDATE users SET password='$password' WHERE username='$oldName'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
