@@ -30,5 +30,10 @@ if(isset($_SESSION["username"])){
                   <p class="text">Herzlich willkommen auf der Website des OEG-Accounts <b>2100</b>. Hier kannst du dir dein Kapital erklicken, um es anschließend in einem unterhanltsamen SevenEleven-Spiel zu verzocken. Wirst du die Millarden erreichen können oder als größter Pechvogel in die Geschichte eingehen? Registriere dich jetzt, werde zu einem der größten Spieler des GambleGames und ringe um den 1. Platz auf der Toplist!</p>
         </div>
       </div>
+
+      <div class="footer">
+        <a href="impressum.html">Impressum</a>
+      </div>
+
     </body>
 </html>

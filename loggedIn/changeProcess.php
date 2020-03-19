@@ -38,7 +38,7 @@ if (isset($_SESSION['username'])){
                           die("Es tut uns leid aber leider können wir aus Sicherheitsgründen nur Bilddateien mit der Endung '.jpg' akzeptieren. Diese dürfen auch nur 300x300 pixel groß sein. Wir bitten um ihr verständnis.");
                     }
                 }
-                
+
                   //Setze user in die datenbank
 
                   $database -> query("UPDATE users SET password='$password' WHERE username='$oldName'") or die ("Fehler beim Senden deines Klicks:".mysqli_error($database));
