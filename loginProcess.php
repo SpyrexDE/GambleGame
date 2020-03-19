@@ -1,9 +1,8 @@
 <?php session_start();
     if(!empty( $_POST['user']) &&  !empty($_POST['pass'])){
       $request = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LfxZ-IUAAAAADCw6cFyh7C_zqhvgjQnmIrKj-cw&response=".$_POST['g-recaptcha-response']);
-        $request = json_decode($request); die($request->score);
+        $request = json_decode($request);
         if($request->success == true){
-            if($request->score >= 0.6){
 
 
         //Lade Werte des form-elemtes in die Variablen
@@ -56,10 +55,7 @@
           }
 
 
-         } else{
-           $_SESSION['notification'] = ["warning", "Dein Score beim recaptcha war zu niedrig!"];
-           header("location: Login.php");
-         }
+
        } else{
          $_SESSION['notification'] = ["warning", "Das recaptcha muss bestätigt werden!"];
          header("location: Login.php");
