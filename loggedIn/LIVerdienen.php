@@ -213,6 +213,12 @@ var x = setInterval(function() {
 
         <center>
       </div>
+
+      <div class="footer">
+        <a class="footerLink" href="impressum.html">Impressum</a>
+        <a class="footerLink" href="datenschutz.html">Datenschutz</a>
+      </div>
+      
     </body>
 </html>
 
