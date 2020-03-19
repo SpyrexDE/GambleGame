@@ -1,9 +1,6 @@
 <?php session_start();
 
-$lastLogin = $_SESSION["lastLogin"];
-$nowMinus20 =  time() - 20*60;
-
-if($lastLogin < $nowMinus20){
+if(time()-$_SESSION["lastLogin"] >= 20){
   session_start();
 
   session_destroy();
