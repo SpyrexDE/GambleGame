@@ -32,7 +32,7 @@ if(isset($_SESSION["username"])){
       </div>
 
       <div class="footer">
-        <a href="impressum.html">Impressum</a>
+        <a class="footerLink" href="impressum.html">Impressum</a>
       </div>
 
     </body>
