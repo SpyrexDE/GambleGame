@@ -5,8 +5,13 @@ if(!isset($_SESSION))
 }
 
           //Lade Werte des form-elemtes in die Variablen und entferne Tags
+          $username = stripcslashes($username);
+          $password = stripcslashes($password);
+          $username = mysqli_real_escape_string($database, $username);
+          $password = mysqli_real_escape_string($database, $password);
           $username = strip_tags($_POST['user']);
           $password = strip_tags($_POST['pass']);
+
           $seineIP = $_SERVER['REMOTE_ADDR'];
 if (!empty($_POST['user'])){
     if(ctype_alnum($username) && strlen( $username) >= 4 && strlen( $username) <= 10 && strlen( $password) >= 4 && strlen( $password) <= 20 && darfRegistrieren()){
