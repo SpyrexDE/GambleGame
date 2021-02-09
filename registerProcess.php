@@ -18,7 +18,7 @@ if (!empty($_POST['user'])){
 
 
           //Mit Server verbinden und Datenbank auswaehlen
-          $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
+          $database = mysqli_connect("gamblegame.mofagames.de", "GambleGame", "L7cnyeN9DA@Ywx3");
           mysqli_select_db($database, "GambleDB");
 
           $registeredIP= $database -> query("SELECT IP FROM iplist WHERE IP = '$seineIP'") or die ("Fehler beim erstellen des Accounts: ".mysqli_error($database));
