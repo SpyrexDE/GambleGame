@@ -10,7 +10,7 @@
         $password = $_POST['pass'];
 
         //Mit Server verbinden und Datenbank auswaehlen
-          $database = mysqli_connect("gamblegame.mofagames.eu", "GambleGame", "L7cnyeN9DA@Ywx3");
+          $database = mysqli_connect("localhost:3306", "GambleGame", "L7cnyeN9DA@Ywx3");
           mysqli_select_db($database, "GambleDB");
 
         //Anti Mysql injection
